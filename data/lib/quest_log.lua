@@ -61,6 +61,9 @@ QuestLog.storage = {
 		flameseer = 45034, -- 1 once The Flameseer is dead
 	},
 
+	-- General Goods: Traveler's Hearthstone cooldown (per player)
+	hearthstoneCooldown = 45051,
+
 	-- Raid: The Cinderforge Depths (gated behind both dungeons above)
 	raid = {
 		quest = 45040,     -- overall quest status (NPC-facing)
@@ -73,7 +76,7 @@ QuestLog.storage = {
 }
 
 -- ===========================================================================
--- Item ids (reserved range: 20001-20030 — see README.md for how to register
+-- Item ids (reserved range: 20001-20033 — see README.md for how to register
 -- these in items.otb before merging data/items/quest_items.xml)
 -- ===========================================================================
 QuestLog.items = {
@@ -126,6 +129,11 @@ QuestLog.items = {
 	ignarethsMoltenCrown = 20028,
 	cinderforgeEmblem = 20029,
 	emberlordsSignet = 20030,
+
+	-- General Goods (Provisioner Nadia)
+	healingDraught = 20031,
+	greaterHealingDraught = 20032,
+	travelersHearthstone = 20033,
 }
 
 -- ===========================================================================

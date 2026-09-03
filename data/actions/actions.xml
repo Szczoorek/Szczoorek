@@ -22,6 +22,12 @@
 	<!-- The Proving Grounds - starts a wave-survival run -->
 	<action actionid="10041" script="trial/proving_grounds_lever.lua"/>
 
+	<!-- General Goods consumables - registered by itemid, not actionid,
+	     since these are ordinary carried/used items, not map objects -->
+	<action itemid="20031" script="consumables/healing_draught.lua"/>
+	<action itemid="20032" script="consumables/greater_healing_draught.lua"/>
+	<action itemid="20033" script="consumables/travelers_hearthstone.lua"/>
+
 	<!-- Dungeon 2: The Crimson Cathedral - the inner gate -->
 	<action actionid="10021" script="dungeons/crimson_cathedral_gate.lua"/>
 </actions>

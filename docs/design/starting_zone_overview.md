@@ -26,6 +26,7 @@ other.
                       - Old Man Corwin  |
                       - Watchman Farro  |
                       - Bounty Clerk Sarna
+                      - Provisioner Nadia
                                         |
                               [Cathedral approach]
                                - Inquisitor Dane
@@ -62,6 +63,11 @@ The player's home base. Everything here is low-risk, dialogue-only content:
   where he stands), see `docs/design/quest_signal_the_watch.md`.
 - **Bounty Clerk Sarna** (daily bounties for both dungeons) — anywhere
   central in the hub, see `docs/design/daily_bounties.md`.
+- **Provisioner Nadia** (ungated potions + the Hearthstone) — ideally near
+  Sergeant Coleman, since she's meant to be the first shop a new character
+  visits, see `docs/design/general_goods.md`. The Hearthstone's home
+  position should point at wherever you consider the "town center" bind
+  spot to be — doesn't need to be Nadia's own tile.
 
 ### The outskirts (Quest 3)
 Three beacon sites (north/east/south) ringing the village, each guarded by
@@ -155,4 +161,5 @@ installation steps. Design docs, one per content piece:
 - `docs/design/fenrir_the_alpha.md`
 - `docs/design/daily_bounties.md`
 - `docs/design/the_proving_grounds.md`
+- `docs/design/general_goods.md`
 - `docs/design/starting_zone_overview.md` (this file)

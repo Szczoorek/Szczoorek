@@ -265,4 +265,27 @@
 		<attribute key="absorbPercentFire" value="5"/>
 		<attribute key="description" value="Cast from the last of Ignareth's molten core. Awarded by Forge Marshal Aldric."/>
 	</item>
+
+	<!-- ===================== General Goods (Provisioner Nadia) ===================== -->
+	<!-- Ungated basic consumables, bought for gold - see docs/design/general_goods.md.
+	     Use scripts: data/actions/scripts/consumables/*.lua, registered by itemid. -->
+
+	<!-- reuse a small potion flask graphic. Stackable, consumed on use. -->
+	<item id="20031" article="a" name="healing draught">
+		<attribute key="weight" value="60"/>
+		<attribute key="description" value="A quick, cheap fix. Not much, but it's something."/>
+	</item>
+
+	<!-- reuse a larger potion flask graphic. Stackable, consumed on use. -->
+	<item id="20032" article="a" name="greater healing draught">
+		<attribute key="weight" value="90"/>
+		<attribute key="description" value="Stronger stuff than the basic draught, and priced accordingly."/>
+	</item>
+
+	<!-- reuse a small charm/stone/trinket graphic. NOT consumed on use - it's
+	     a keepsake, reused every time (subject to its own cooldown). -->
+	<item id="20033" article="a" name="traveler's hearthstone">
+		<attribute key="weight" value="20"/>
+		<attribute key="description" value="Warm to the touch. Rubbing it calls you home - but not too often."/>
+	</item>
 </items>

@@ -75,6 +75,7 @@ docs/design/                  Lore, encounter design, loot tables & map
 | 9 | **Daily bounties** | repeatable trash-clear dailies for dungeons 4 & 5 | `docs/design/daily_bounties.md` |
 | 10 | **The Cinderforge Depths** | 5-boss raid (Molten Core/BRD-inspired), gated behind dungeons 4 & 5's achievements | `docs/design/dungeon_cinderforge_depths.md` |
 | 11 | **The Proving Grounds** | repeatable 5-wave survival arena, 15-min cooldown | `docs/design/the_proving_grounds.md` |
+| 12 | **General Goods** | ungated consumables vendor (potions + a Hearthstone) | `docs/design/general_goods.md` |
 
 `docs/design/starting_zone_overview.md` ties all of the above into one
 suggested map layout (hub town, wilds, dungeon entrances) — read that one
@@ -102,9 +103,9 @@ the map" lives there rather than in code comments.
 3. **Add the items to `items.otb` before merging `items.xml`.** `items.xml`
    only carries *flags and text* for a server id that must already exist in
    `items.otb` — it cannot invent a new id by itself. `data/items/quest_items.xml`
-   reserves server ids **20001–20030** for this pack:
+   reserves server ids **20001–20033** for this pack:
    - Use your Item Editor (or otb generator of choice) to add entries for ids
-     20001–20030 in `items.otb`. Each item's design doc / comment names what
+     20001–20033 in `items.otb`. Each item's design doc / comment names what
      kind of object it is (a small trinket, a book, a key, a piece of jewellery,
      a one-handed sword, a piece of armor) — reuse the client sprite of any
      existing similar item, since these are new server ids riding on an
@@ -113,7 +114,7 @@ the map" lives there rather than in code comments.
      "Readable" flag for those two ids in items.otb so it displays on use.
    - Then merge the contents of `data/items/quest_items.xml` into your real
      `items.xml`.
-   - If ids 20001–20030 collide with something you already use, renumber them
+   - If ids 20001–20033 collide with something you already use, renumber them
      consistently across `quest_items.xml` and every script that references
      an item id by name via the constants in `data/lib/quest_log.lua`
      (`QuestLog.items`) — every script pulls ids from that table, so it's a
