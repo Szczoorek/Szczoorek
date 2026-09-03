@@ -191,4 +191,14 @@
 		<attribute key="attack" value="12"/>
 		<attribute key="description" value="Standard issue. Sergeant Coleman hands these out to anyone who survives the dummy."/>
 	</item>
+
+	<!-- ===================== Quest 3: Signal the Watch ===================== -->
+
+	<!-- reuse a badge/brooch/small medallion graphic -->
+	<item id="20023" article="the" name="watchman's badge">
+		<attribute key="weight" value="15"/>
+		<attribute key="slotType" value="necklace"/>
+		<attribute key="armor" value="3"/>
+		<attribute key="description" value="Issued by Watchman Farro to anyone who helped light the signal beacons."/>
+	</item>
 </items>

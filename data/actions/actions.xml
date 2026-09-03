@@ -11,6 +11,11 @@
 	<!-- Dungeon 1: The Sunken Vault - lever that opens the way to Blackscale -->
 	<action actionid="10002" script="dungeons/sunken_vault_gate.lua"/>
 
+	<!-- Quest 3: Signal the Watch - the three beacons (north/east/south) -->
+	<action actionid="10003" script="quests/signal_beacon.lua"/>
+	<action actionid="10004" script="quests/signal_beacon.lua"/>
+	<action actionid="10005" script="quests/signal_beacon.lua"/>
+
 	<!-- Dungeon 2: The Crimson Cathedral - the inner gate -->
 	<action actionid="10021" script="dungeons/crimson_cathedral_gate.lua"/>
 </actions>

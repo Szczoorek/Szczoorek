@@ -36,6 +36,14 @@ QuestLog.storage = {
 	-- Quest 2: The Lost Locket
 	locket = 45010,
 
+	-- Quest 3: Signal the Watch
+	signal = {
+		quest = 45004,
+		beaconNorth = 45005,
+		beaconEast = 45006,
+		beaconSouth = 45007,
+	},
+
 	-- Dungeon 1: The Sunken Vault
 	vault = {
 		quest = 45020,      -- overall quest status (NPC-facing)
@@ -55,7 +63,7 @@ QuestLog.storage = {
 }
 
 -- ===========================================================================
--- Item ids (reserved range: 20001-20022 — see README.md for how to register
+-- Item ids (reserved range: 20001-20023 — see README.md for how to register
 -- these in items.otb before merging data/items/quest_items.xml)
 -- ===========================================================================
 QuestLog.items = {
@@ -96,6 +104,9 @@ QuestLog.items = {
 
 	-- Quest 0: Boot Camp
 	recruitsTrainingBlade = 20022,
+
+	-- Quest 3: Signal the Watch
+	watchmansBadge = 20023,
 }
 
 -- ===========================================================================
@@ -116,15 +127,22 @@ function Player.setQuestStatus(self, storageKey, status)
 	self:setStorageValue(storageKey, status)
 end
 
---- Convenience check used by dungeon gate/lever scripts.
-function Player.hasDefeated(self, storageKey)
+--- Generic one-time boolean flag on a storage value (0/unset = false,
+--- 1 = true). Used for anything that's just "has this happened yet" -
+--- a boss kill, a lit beacon, a defeated training dummy - without needing
+--- the full NOT_STARTED/STARTED/COMPLETED status enum.
+function Player.hasFlag(self, storageKey)
 	return self:getStorageValue(storageKey) == 1
 end
 
---- Marks a boss as defeated. Boss "defeated" flags are pack-wide (not
---- per-player) in the sense that the creaturescript sets them on every
---- party member present at the kill; call this once per player in the
---- onDeath handler.
-function Player.markDefeated(self, storageKey)
+function Player.setFlag(self, storageKey)
 	self:setStorageValue(storageKey, 1)
 end
+
+--- hasDefeated/markDefeated are hasFlag/setFlag under boss-fight-specific
+--- names, kept separate for readability at call sites. Boss "defeated"
+--- flags are pack-wide (not per-player) in the sense that the
+--- creaturescript sets them on every party member present at the kill;
+--- call markDefeated once per player in the onDeath handler.
+Player.hasDefeated = Player.hasFlag
+Player.markDefeated = Player.setFlag

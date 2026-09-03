@@ -61,12 +61,13 @@ docs/design/                  Lore, encounter design, loot tables & map
 | 0 | **Boot Camp** | zero-risk newbie tutorial quest | `docs/design/quest_boot_camp.md` |
 | 1 | **Wolves at the Doorstep** | simple kill-and-collect quest | `docs/design/quest_wolves_at_the_doorstep.md` |
 | 2 | **The Lost Locket** | simple fetch quest | `docs/design/quest_lost_locket.md` |
-| 3 | **The Sunken Vault** | 3-boss dungeon (Deadmines-inspired) | `docs/design/dungeon_sunken_vault.md` |
-| 4 | **The Crimson Cathedral** | 4-boss dungeon (Scarlet Monastery-inspired) | `docs/design/dungeon_crimson_cathedral.md` |
-| 5 | **Faction reputation & vendors** | systemic (spans dungeons 3 & 4) | `docs/design/factions_and_achievements.md` |
-| 6 | **Achievements** | systemic (spans everything) | `docs/design/factions_and_achievements.md` |
-| 7 | **Fenrir the Alpha** | open-world rare spawn | `docs/design/fenrir_the_alpha.md` |
-| 8 | **Daily bounties** | repeatable trash-clear dailies for dungeons 3 & 4 | `docs/design/daily_bounties.md` |
+| 3 | **Signal the Watch** | multi-stage "light 3 beacons" quest | `docs/design/quest_signal_the_watch.md` |
+| 4 | **The Sunken Vault** | 3-boss dungeon (Deadmines-inspired) | `docs/design/dungeon_sunken_vault.md` |
+| 5 | **The Crimson Cathedral** | 4-boss dungeon (Scarlet Monastery-inspired) | `docs/design/dungeon_crimson_cathedral.md` |
+| 6 | **Faction reputation & vendors** | systemic (spans dungeons 4 & 5) | `docs/design/factions_and_achievements.md` |
+| 7 | **Achievements** | systemic (spans everything) | `docs/design/factions_and_achievements.md` |
+| 8 | **Fenrir the Alpha** | open-world rare spawn | `docs/design/fenrir_the_alpha.md` |
+| 9 | **Daily bounties** | repeatable trash-clear dailies for dungeons 4 & 5 | `docs/design/daily_bounties.md` |
 
 `docs/design/starting_zone_overview.md` ties all of the above into one
 suggested map layout (hub town, wilds, dungeon entrances) — read that one
@@ -94,9 +95,9 @@ the map" lives there rather than in code comments.
 3. **Add the items to `items.otb` before merging `items.xml`.** `items.xml`
    only carries *flags and text* for a server id that must already exist in
    `items.otb` — it cannot invent a new id by itself. `data/items/quest_items.xml`
-   reserves server ids **20001–20022** for this pack:
+   reserves server ids **20001–20023** for this pack:
    - Use your Item Editor (or otb generator of choice) to add entries for ids
-     20001–20022 in `items.otb`. Each item's design doc / comment names what
+     20001–20023 in `items.otb`. Each item's design doc / comment names what
      kind of object it is (a small trinket, a book, a key, a piece of jewellery,
      a one-handed sword, a piece of armor) — reuse the client sprite of any
      existing similar item, since these are new server ids riding on an
@@ -105,7 +106,7 @@ the map" lives there rather than in code comments.
      "Readable" flag for those two ids in items.otb so it displays on use.
    - Then merge the contents of `data/items/quest_items.xml` into your real
      `items.xml`.
-   - If ids 20001–20022 collide with something you already use, renumber them
+   - If ids 20001–20023 collide with something you already use, renumber them
      consistently across `quest_items.xml` and every script that references
      an item id by name via the constants in `data/lib/quest_log.lua`
      (`QuestLog.items`) — every script pulls ids from that table, so it's a
