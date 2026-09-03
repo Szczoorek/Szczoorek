@@ -15,7 +15,8 @@ AchievementLog.storage = {
 	vaultCleaner = 45110,        -- complete "Secrets of the Sunken Vault"
 	cathedralsBane = 45111,      -- complete "Purge the Crimson Cathedral"
 	fenrirsBane = 45112,         -- slay Fenrir the Alpha (see fenrir_the_alpha.xml)
-	cinderforgeConqueror = 45113, -- complete "The Cinderforge Depths" raid
+	cinderforgeConqueror = 45113,    -- complete "The Cinderforge Depths" raid
+	provingGroundsChampion = 45114,  -- clear all 5 waves of the Proving Grounds
 }
 
 AchievementLog.names = {
@@ -23,6 +24,7 @@ AchievementLog.names = {
 	[AchievementLog.storage.cathedralsBane] = "Cathedral's Bane",
 	[AchievementLog.storage.fenrirsBane] = "Fenrir's Bane",
 	[AchievementLog.storage.cinderforgeConqueror] = 'Cinderforge Conqueror',
+	[AchievementLog.storage.provingGroundsChampion] = 'Proving Grounds Champion',
 }
 
 -- Order to display achievements in for !achievements, since pairs() over
@@ -32,6 +34,7 @@ AchievementLog.order = {
 	AchievementLog.storage.cathedralsBane,
 	AchievementLog.storage.fenrirsBane,
 	AchievementLog.storage.cinderforgeConqueror,
+	AchievementLog.storage.provingGroundsChampion,
 }
 
 -- ===========================================================================

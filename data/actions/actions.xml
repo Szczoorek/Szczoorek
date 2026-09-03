@@ -19,6 +19,9 @@
 	<!-- Raid: The Cinderforge Depths - achievement-gated entrance -->
 	<action actionid="10022" script="raid/cinderforge_gate.lua"/>
 
+	<!-- The Proving Grounds - starts a wave-survival run -->
+	<action actionid="10041" script="trial/proving_grounds_lever.lua"/>
+
 	<!-- Dungeon 2: The Crimson Cathedral - the inner gate -->
 	<action actionid="10021" script="dungeons/crimson_cathedral_gate.lua"/>
 </actions>

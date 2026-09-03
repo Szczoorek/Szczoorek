@@ -6,4 +6,5 @@
 -->
 <globalevents>
 	<globalevent name="FenrirRespawnCheck" interval="1800000" script="fenrir_respawn.lua"/>
+	<globalevent name="ProvingGroundsTick" interval="5000" script="trial_tick.lua"/>
 </globalevents>

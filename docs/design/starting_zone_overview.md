@@ -36,6 +36,11 @@ other.
                           [Cinderforge Depths entrance]
                            - Forge Marshal Aldric
                            - achievement-gated raid entrance
+
+                          [The Proving Grounds]
+                           - Trial Marshal Vex
+                           - wave-survival arena (not gated to anywhere
+                             above - can sit anywhere convenient)
 ```
 
 ## Zone-by-zone
@@ -101,6 +106,13 @@ a dead-end off the village is fine.
 - The entrance itself is gated: nothing to build here beyond the gate
   object and its usable action - see that doc's map checklist.
 
+### The Proving Grounds
+A single arena room with **Trial Marshal Vex** and a lever outside it -
+see `docs/design/the_proving_grounds.md`. Not gated behind anything else
+in the pack, so it can go anywhere convenient (the village hub is a
+reasonable choice, since it's meant to be quick and replayable rather than
+an "expedition").
+
 ## Suggested play order
 
 1. **Boot Camp** — every brand-new character's literal first minute, before
@@ -119,8 +131,10 @@ a dead-end off the village is fine.
 7. **Fenrir the Alpha** — not gated to any point in this order; he's ambient
    world content a player might stumble into any time after Quest 1 opens
    up the forest.
-8. **Daily bounties** — repeatable content for after steps 4-5, not a
-   one-time step at all.
+8. **Daily bounties** and **the Proving Grounds** — repeatable content for
+   after steps 4-5, not one-time steps at all. The Proving Grounds in
+   particular has no prerequisite and can be tried the moment a character
+   can survive a Timber Wolf, long before the dungeons.
 
 Reputation and achievements aren't a separate step — they accrue
 automatically as players work through steps 4, 5, 6 and 8.
@@ -140,4 +154,5 @@ installation steps. Design docs, one per content piece:
 - `docs/design/factions_and_achievements.md`
 - `docs/design/fenrir_the_alpha.md`
 - `docs/design/daily_bounties.md`
+- `docs/design/the_proving_grounds.md`
 - `docs/design/starting_zone_overview.md` (this file)

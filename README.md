@@ -27,6 +27,7 @@ data/
     achievement_log.lua      One-time achievement flags + server-wide announcements
     vendor_lib.lua           Shared dialogue logic for reputation-gated vendor NPCs
     bounty_log.lua           Daily repeatable bounty progress/reset tracking
+    trial_log.lua            Proving Grounds wave-survival session state
 
   npc/                      Quest-givers and vendors (XML definition + look)
   npc/scripts/                NPC dialogue (Lua)
@@ -73,6 +74,7 @@ docs/design/                  Lore, encounter design, loot tables & map
 | 8 | **Fenrir the Alpha** | open-world rare spawn | `docs/design/fenrir_the_alpha.md` |
 | 9 | **Daily bounties** | repeatable trash-clear dailies for dungeons 4 & 5 | `docs/design/daily_bounties.md` |
 | 10 | **The Cinderforge Depths** | 5-boss raid (Molten Core/BRD-inspired), gated behind dungeons 4 & 5's achievements | `docs/design/dungeon_cinderforge_depths.md` |
+| 11 | **The Proving Grounds** | repeatable 5-wave survival arena, 15-min cooldown | `docs/design/the_proving_grounds.md` |
 
 `docs/design/starting_zone_overview.md` ties all of the above into one
 suggested map layout (hub town, wilds, dungeon entrances) — read that one
@@ -125,6 +127,10 @@ the map" lives there rather than in code comments.
      `data/lib/achievement_log.lua`).
    - Daily bounties: **45120–45129** (`BountyLog.storage` in
      `data/lib/bounty_log.lua`).
+   - Proving Grounds cooldown: **45050** (`TrialLog.storage.lastAttempt` in
+     `data/lib/trial_log.lua` - carved out of the quest/dungeon block above
+     since it's a separate lib, but still inside that same 45000–45099
+     range).
 
    Make sure nothing else on your server writes into those ranges.
 5. **Place the map pieces.** This pack ships no `.otbm` — you still need to
