@@ -120,3 +120,17 @@ function DungeonLib.markNearbyPlayers(position, storageKey, radius)
 		end
 	end
 end
+
+--- Grants `amount` reputation with `factionKey` (see reputation_log.lua) to
+--- every player within `radius` tiles of `position`. Used from boss
+--- onDeath handlers alongside markNearbyPlayers.
+function DungeonLib.grantReputationToNearby(position, factionKey, amount, radius)
+	radius = radius or 10
+	local spectators = Game.getSpectators(position, false, false, radius, radius, radius, radius)
+	for _, creature in ipairs(spectators) do
+		local player = creature:getPlayer()
+		if player then
+			player:addReputation(factionKey, amount)
+		end
+	end
+end

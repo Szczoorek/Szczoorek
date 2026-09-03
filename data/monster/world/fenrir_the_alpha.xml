@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Open-world rare spawn ("world boss" in miniature) in the same forest as
+	Quest 1's Timber Wolves. See docs/design/fenrir_the_alpha.md and
+	data/globalevents/scripts/fenrir_respawn.lua for the spawn timer.
+	AI: data/creaturescripts/scripts/world/fenrir_ai.lua
+-->
+<monster name="Fenrir the Alpha" nameDescription="Fenrir the Alpha" race="blood" experience="900" speed="240" manacost="0">
+	<health now="2200" max="2200"/>
+	<look type="26" head="0" body="0" legs="0" feet="0" addons="0" corpse="2812"/>
+	<targetchange interval="4000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag hidehealth="0"/>
+		<flag isboss="1"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="48" attack="38"/>
+	</attacks>
+	<defenses armor="18" defense="22"/>
+	<voices interval="6000" chance="10">
+		<voice sentence="*a bone-deep howl echoes through the trees*"/>
+	</voices>
+	<script>
+		<event name="FenrirAI"/>
+	</script>
+	<loot>
+		<item id="2148" countmax="200" chance="90000"/>
+		<item id="20021" chance="60000"/> <!-- fenrir's fang (QuestLog.items.fenrirsFang) -->
+	</loot>
+</monster>

@@ -13,4 +13,5 @@
 	<event name="OpheliaAI" script="dungeons/ophelia_ai.lua"/>
 	<event name="VarekAI" script="dungeons/varek_ai.lua"/>
 	<event name="FlameseerAI" script="dungeons/flameseer_ai.lua"/>
+	<event name="FenrirAI" script="world/fenrir_ai.lua"/>
 </creaturescripts>

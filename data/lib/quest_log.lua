@@ -49,7 +49,7 @@ QuestLog.storage = {
 }
 
 -- ===========================================================================
--- Item ids (reserved range: 20001-20012 — see README.md for how to register
+-- Item ids (reserved range: 20001-20021 — see README.md for how to register
 -- these in items.otb before merging data/items/quest_items.xml)
 -- ===========================================================================
 QuestLog.items = {
@@ -72,6 +72,21 @@ QuestLog.items = {
 	cathedralSigil = 20010,
 	emberWardedAmulet = 20011,
 	scarletPrayerBook = 20012,
+
+	-- Harbor Trade Concern reputation gear (Quartermaster Reyes)
+	corsairsBoots = 20013,
+	harborGuardPlate = 20014,
+	tidebreakerShield = 20015,
+	blackscalesSignet = 20016,
+
+	-- Order of the Ember reputation gear (Armsmaster Cael)
+	emberTouchedGloves = 20017,
+	cathedralWardensHelm = 20018,
+	zealotsLegguards = 20019,
+	flamewroughtCrown = 20020,
+
+	-- World: Fenrir the Alpha
+	fenrirsFang = 20021,
 }
 
 -- ===========================================================================

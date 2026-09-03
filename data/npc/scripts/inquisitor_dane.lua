@@ -77,6 +77,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:addExperience(REWARD_EXPERIENCE)
 			player:addMoney(REWARD_GOLD)
 			player:setQuestStatus(QuestLog.storage.cathedral.quest, QuestLog.status.COMPLETED)
+			player:grantAchievement(AchievementLog.storage.cathedralsBane)
 			npcHandler:say('The Flameseer\'s own ember, cold at last. Wear this amulet - it was warded against ' ..
 				'exactly this kind of fire. You have my thanks, and the order\'s.', cid)
 		else

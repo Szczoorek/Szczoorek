@@ -60,6 +60,7 @@ function onDeath(cid)
 
 	local position = monster:getPosition()
 	DungeonLib.markNearbyPlayers(position, QuestLog.storage.vault.blackscale, 10)
+	DungeonLib.grantReputationToNearby(position, ReputationLog.storage.harborTradeConcern, 300, 10)
 	DungeonLib.broadcast('Captain Blackscale has been slain! The Sunken Vault is clear.')
 	position:sendMagicEffect(CONST_ME_MORTAREA)
 	return true

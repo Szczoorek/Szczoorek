@@ -53,6 +53,7 @@ function onDeath(cid)
 
 	local position = monster:getPosition()
 	DungeonLib.markNearbyPlayers(position, QuestLog.storage.cathedral.flameseer, 10)
+	DungeonLib.grantReputationToNearby(position, ReputationLog.storage.orderOfTheEmber, 300, 10)
 	DungeonLib.broadcast('The Flameseer has fallen! The Crimson Cathedral burns no more.')
 	position:sendMagicEffect(CONST_ME_MORTAREA)
 	return true

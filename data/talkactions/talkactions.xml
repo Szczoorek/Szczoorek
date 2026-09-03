@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-	FRAGMENT - merge this <talkaction> line into your existing
-	talkactions.xml. access="1" restricts it to GMs/CMs and up on most
-	default group setups - raise or lower to match your own group table.
+	FRAGMENT - merge these <talkaction> lines into your existing
+	talkactions.xml. /questreset's access="1" restricts it to GMs/CMs and up
+	on most default group setups - raise or lower to match your own group
+	table. !achievements and !reputation are player-facing and carry no
+	access restriction.
 -->
 <talkactions>
 	<talkaction words="/questreset" access="1" script="questreset.lua"/>
+	<talkaction words="!achievements" script="achievements.lua"/>
+	<talkaction words="!reputation" script="reputation.lua"/>
 </talkactions>

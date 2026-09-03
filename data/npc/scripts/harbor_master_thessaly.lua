@@ -73,6 +73,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:addExperience(REWARD_EXPERIENCE)
 			player:addMoney(REWARD_GOLD)
 			player:setQuestStatus(QuestLog.storage.vault.quest, QuestLog.status.COMPLETED)
+			player:grantAchievement(AchievementLog.storage.vaultCleaner)
 			npcHandler:say('Blackscale\'s own hand... it\'s over, then. Take his blade - you\'ve earned it, ' ..
 				'and the harbor\'s trade routes are safe again.', cid)
 		else

@@ -99,4 +99,81 @@
 		<attribute key="weight" value="70"/>
 		<attribute key="description" value="A prayer book bound in dyed leather. The prayers inside are... not the usual kind."/>
 	</item>
+
+	<!-- ============ Harbor Trade Concern reputation gear (see docs/design/factions_and_achievements.md) ============ -->
+
+	<!-- reuse a leather boots graphic -->
+	<item id="20013" article="the" name="corsair's boots">
+		<attribute key="weight" value="380"/>
+		<attribute key="slotType" value="feet"/>
+		<attribute key="armor" value="4"/>
+		<attribute key="description" value="Sold to Friendly-standing allies of the Harbor Trade Concern."/>
+	</item>
+
+	<!-- reuse a plate/brigandine body armor graphic -->
+	<item id="20014" article="the" name="harbor guard plate">
+		<attribute key="weight" value="5400"/>
+		<attribute key="slotType" value="body"/>
+		<attribute key="armor" value="11"/>
+		<attribute key="description" value="Sold to Honored-standing allies of the Harbor Trade Concern."/>
+	</item>
+
+	<!-- reuse a round/kite shield graphic -->
+	<item id="20015" article="the" name="tidebreaker shield">
+		<attribute key="weight" value="3800"/>
+		<attribute key="slotType" value="shield"/>
+		<attribute key="armor" value="13"/>
+		<attribute key="description" value="Sold to Revered-standing allies of the Harbor Trade Concern."/>
+	</item>
+
+	<!-- reuse an ornate ring graphic -->
+	<item id="20016" article="the" name="blackscale's signet">
+		<attribute key="weight" value="10"/>
+		<attribute key="slotType" value="ring"/>
+		<attribute key="armor" value="3"/>
+		<attribute key="description" value="Sold to Exalted-standing allies of the Harbor Trade Concern. Recast from the captain's own ring."/>
+	</item>
+
+	<!-- ============ Order of the Ember reputation gear ============ -->
+
+	<!-- reuse a leather/cloth gloves graphic -->
+	<item id="20017" article="the" name="ember-touched gloves">
+		<attribute key="weight" value="220"/>
+		<attribute key="slotType" value="hands"/>
+		<attribute key="armor" value="4"/>
+		<attribute key="description" value="Sold to Friendly-standing allies of the Order of the Ember."/>
+	</item>
+
+	<!-- reuse a helmet graphic -->
+	<item id="20018" article="the" name="cathedral warden's helm">
+		<attribute key="weight" value="1600"/>
+		<attribute key="slotType" value="head"/>
+		<attribute key="armor" value="10"/>
+		<attribute key="description" value="Sold to Honored-standing allies of the Order of the Ember."/>
+	</item>
+
+	<!-- reuse a plate legs graphic -->
+	<item id="20019" article="the" name="zealot's legguards">
+		<attribute key="weight" value="4200"/>
+		<attribute key="slotType" value="legs"/>
+		<attribute key="armor" value="12"/>
+		<attribute key="description" value="Sold to Revered-standing allies of the Order of the Ember."/>
+	</item>
+
+	<!-- reuse an ornate crown/circlet graphic -->
+	<item id="20020" article="the" name="flamewrought crown">
+		<attribute key="weight" value="900"/>
+		<attribute key="slotType" value="head"/>
+		<attribute key="armor" value="9"/>
+		<attribute key="absorbPercentFire" value="6"/>
+		<attribute key="description" value="Sold to Exalted-standing allies of the Order of the Ember."/>
+	</item>
+
+	<!-- ===================== World: Fenrir the Alpha ===================== -->
+
+	<!-- reuse a fang/tooth trinket graphic - purely decorative -->
+	<item id="20021" article="the" name="fenrir's fang">
+		<attribute key="weight" value="50"/>
+		<attribute key="description" value="A single fang, longer than a man's finger, torn from the alpha of the forest pack."/>
+	</item>
 </items>
