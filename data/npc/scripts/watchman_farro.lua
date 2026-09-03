@@ -53,6 +53,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(QuestLog.items.watchmansBadge, 1)
 			player:addExperience(REWARD_EXPERIENCE)
 			player:addMoney(REWARD_GOLD)
+			player:addRenown(25)
 			player:setQuestStatus(QuestLog.storage.signal.quest, QuestLog.status.COMPLETED)
 			npcHandler:say('All three lit - I saw them from here. Take this badge, and my thanks. The watch owes you.', cid)
 		else

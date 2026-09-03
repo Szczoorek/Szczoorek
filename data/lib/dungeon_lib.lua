@@ -101,6 +101,20 @@ function DungeonLib.crossedHealthThreshold(monster, percent, flagStorageKey)
 	return false
 end
 
+--- Grants `amount` Renown (see renown_log.lua) to every player within
+--- `radius` tiles of `position`. Used alongside markNearbyPlayers and
+--- grantReputationToNearby in boss onDeath handlers.
+function DungeonLib.grantRenownToNearby(position, amount, radius)
+	radius = radius or 10
+	local spectators = Game.getSpectators(position, false, false, radius, radius, radius, radius)
+	for _, creature in ipairs(spectators) do
+		local player = creature:getPlayer()
+		if player then
+			player:addRenown(amount)
+		end
+	end
+end
+
 --- Broadcasts a server-wide message, used for boss-kill announcements.
 function DungeonLib.broadcast(message)
 	Game.broadcastMessage(message, MESSAGE_EVENT_ADVANCE)

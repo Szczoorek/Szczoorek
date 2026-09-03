@@ -22,4 +22,11 @@
 	<event name="SlagmawAI" script="raid/slagmaw_ai.lua"/>
 	<event name="AshgraveAI" script="raid/ashgrave_ai.lua"/>
 	<event name="IgnarethAI" script="raid/ignareth_ai.lua"/>
+
+	<!-- Renown: docks the killer's Renown for an open-world player kill.
+	     Unlike every other line in this file, this event is NOT attached
+	     via a monster's <script> block - it must be registered on every
+	     PLAYER at login instead. See docs/design/renown_and_pvp.md for
+	     the one-line addition your server's existing login script needs. -->
+	<event name="RenownPvpPenalty" script="pvp/renown_penalty.lua"/>
 </creaturescripts>

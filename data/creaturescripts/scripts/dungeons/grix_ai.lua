@@ -43,6 +43,7 @@ function onDeath(cid)
 	local position = monster:getPosition()
 	DungeonLib.markNearbyPlayers(position, QuestLog.storage.vault.grix, 10)
 	DungeonLib.grantReputationToNearby(position, ReputationLog.storage.harborTradeConcern, 150, 10)
+	DungeonLib.grantRenownToNearby(position, 30, 10)
 	position:sendMagicEffect(CONST_ME_EXPLOSIONAREA)
 	return true
 end

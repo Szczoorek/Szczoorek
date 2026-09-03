@@ -41,6 +41,7 @@ local function creatureSayCallback(cid, type, msg)
 		player:addItem(QuestLog.items.corwinsLuckyRing, 1)
 		player:addExperience(REWARD_EXPERIENCE)
 		player:addMoney(REWARD_GOLD)
+		player:addRenown(15)
 		player:setQuestStatus(QuestLog.storage.locket, QuestLog.status.COMPLETED)
 		npcHandler:say('You found it! Thank you, truly. Please, take this ring - it was going to be hers.', cid)
 		return true

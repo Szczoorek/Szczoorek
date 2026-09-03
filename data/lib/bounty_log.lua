@@ -92,4 +92,5 @@ function Player.completeBounty(self, track)
 	self:setStorageValue(BountyLog.storage[track].completed, 1)
 	self:addMoney(BountyLog.rewardGold[track])
 	self:addReputation(ReputationLog.storage[BountyLog.factionKey[track]], BountyLog.rewardReputation[track])
+	self:addRenown(10)
 end

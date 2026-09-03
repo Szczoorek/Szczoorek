@@ -88,13 +88,14 @@ orphan=$(comm -13 /tmp/verify_lua_items.$$ /tmp/verify_xml_items.$$)
 [ -n "$orphan" ] && echo "NOTE (not a failure): quest_items.xml id(s) not in QuestLog.items table: $orphan"
 d=$(grep -oP '(?<=<item id=")\d+' data/items/quest_items.xml | dup); [ -n "$d" ] && problem "duplicate item id(s) in quest_items.xml: $d"
 
-note "Storage value collisions across QuestLog/ReputationLog/AchievementLog/BountyLog/TrialLog"
+note "Storage value collisions across QuestLog/ReputationLog/AchievementLog/BountyLog/TrialLog/RenownLog"
 {
 	sed -n '/^QuestLog.storage = {/,/^}/p' data/lib/quest_log.lua | grep -oP '4\d{4}'
 	sed -n '/^ReputationLog.storage = {/,/^}/p' data/lib/reputation_log.lua | grep -oP '4\d{4}'
 	sed -n '/^AchievementLog.storage = {/,/^}/p' data/lib/achievement_log.lua | grep -oP '4\d{4}'
 	sed -n '/^BountyLog.storage = {/,/^}/p' data/lib/bounty_log.lua | grep -oP '4\d{4}'
 	sed -n '/^TrialLog.storage = {/,/^}/p' data/lib/trial_log.lua | grep -oP '4\d{4}'
+	sed -n '/^RenownLog.storage = {/,/^}/p' data/lib/renown_log.lua | grep -oP '4\d{4}'
 } > /tmp/verify_all_storage.$$
 d=$(sort /tmp/verify_all_storage.$$ | uniq -d)
 [ -n "$d" ] && problem "storage value(s) reused across different libs: $d"

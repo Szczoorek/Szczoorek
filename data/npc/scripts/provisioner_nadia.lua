@@ -1,7 +1,12 @@
 --[[
-	Provisioner Nadia - ungated general goods vendor. No reputation gate,
+	Provisioner Nadia - ungated general goods vendor. No FACTION gate,
 	unlike Quartermaster Reyes/Armsmaster Cael (data/lib/vendor_lib.lua) -
 	just gold, available from the very start. See docs/design/general_goods.md.
+
+	She does still enforce the same Renown floor those two do (see
+	docs/design/renown_and_pvp.md) - refuses service below Neutral. Kept
+	as a manual check here rather than pulling in vendor_lib.lua, since
+	she has no faction/rank catalog to build.
 
 	Say 'goods' (or 'shop') for the catalog; say an item's keyword to buy
 	one.
@@ -28,6 +33,20 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
+
+	if not player:hasRenownRank(VendorLib.minimumRenownRank) then
+		if msg:find('goods') or msg:find('shop') then
+			npcHandler:say('I\'ve heard about you. Find somewhere else to spend your gold.', cid)
+			return true
+		end
+		for _, entry in ipairs(GOODS) do
+			if msg:find(entry.keyword) then
+				npcHandler:say('I\'ve heard about you. Find somewhere else to spend your gold.', cid)
+				return true
+			end
+		end
+		return false
+	end
 
 	if msg:find('goods') or msg:find('shop') then
 		local lines = {}

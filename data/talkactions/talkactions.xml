@@ -11,4 +11,5 @@
 	<talkaction words="!quests" script="quests.lua"/>
 	<talkaction words="!achievements" script="achievements.lua"/>
 	<talkaction words="!reputation" script="reputation.lua"/>
+	<talkaction words="!renown" script="renown.lua"/>
 </talkactions>

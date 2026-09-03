@@ -28,6 +28,7 @@ data/
     vendor_lib.lua           Shared dialogue logic for reputation-gated vendor NPCs
     bounty_log.lua           Daily repeatable bounty progress/reset tracking
     trial_log.lua            Proving Grounds wave-survival session state
+    renown_log.lua           General PvE-wide Renown score (PvP-drainable)
 
   npc/                      Quest-givers and vendors (XML definition + look)
   npc/scripts/                NPC dialogue (Lua)
@@ -76,6 +77,7 @@ docs/design/                  Lore, encounter design, loot tables & map
 | 10 | **The Cinderforge Depths** | 5-boss raid (Molten Core/BRD-inspired), gated behind dungeons 4 & 5's achievements | `docs/design/dungeon_cinderforge_depths.md` |
 | 11 | **The Proving Grounds** | repeatable 5-wave survival arena, 15-min cooldown | `docs/design/the_proving_grounds.md` |
 | 12 | **General Goods** | ungated consumables vendor (potions + a Hearthstone) | `docs/design/general_goods.md` |
+| 13 | **Renown & Open-World PvP** | systemic (spans everything) — PvE gains it, PvP kills drain it, low Renown locks out every vendor | `docs/design/renown_and_pvp.md` |
 
 `docs/design/starting_zone_overview.md` ties all of the above into one
 suggested map layout (hub town, wilds, dungeon entrances) — read that one
@@ -134,16 +136,25 @@ the map" lives there rather than in code comments.
      `data/lib/trial_log.lua` - carved out of the quest/dungeon block above
      since it's a separate lib, but still inside that same 45000–45099
      range).
+   - Renown: **45102** (`RenownLog.storage.value` in
+     `data/lib/renown_log.lua` - the next free slot inside the reputation
+     block above; Harbor Trade Concern/Order of the Ember use 45100/45101).
 
    Make sure nothing else on your server writes into those ranges.
-5. **Place the map pieces.** This pack ships no `.otbm` — you still need to
+5. **Renown's PvP penalty needs one manual step.** Unlike everything else
+   in this pack, `data/creaturescripts/scripts/pvp/renown_penalty.lua`
+   can't self-register - it has to be attached to every player via your
+   server's *existing* login script. See "Installing this piece
+   specifically" in `docs/design/renown_and_pvp.md` for the exact line to
+   add and a signature compatibility warning specific to that script.
+6. **Place the map pieces.** This pack ships no `.otbm` — you still need to
    build the actual rooms/caves/dungeon in the map editor. Each design doc
    describes what needs to exist (a wolf-infested clearing, a small cave with
    a chest, a sunken pirate vault, a cathedral with four wings) and calls out
    every unique/action id a placed object needs so the scripts fire.
    `docs/design/starting_zone_overview.md` shows how all the pieces relate
    to each other on one map.
-6. **Update Fenrir the Alpha's spawn position.** `FENRIR_SPAWN_POSITION` in
+7. **Update Fenrir the Alpha's spawn position.** `FENRIR_SPAWN_POSITION` in
    `data/globalevents/scripts/fenrir_respawn.lua` is a placeholder — point
    it at the real position once you've built the Timber Wolf forest (see
    `docs/design/fenrir_the_alpha.md`).
@@ -180,6 +191,7 @@ in this pack as of the last commit that touched `data/`.
   `data/talkactions/scripts/questreset.lua`) resets one player's progress on
   a given quest (`wolves`, `locket`, `vault`, `cathedral`, or `all`) so you
   can replay it while iterating on the map.
-- `!quests`, `!achievements` and `!reputation` (player-facing) let anyone
-  check their own progress — across every quest/dungeon/raid, achievements,
-  and faction standing respectively — without needing a GM.
+- `!quests`, `!achievements`, `!reputation` and `!renown` (player-facing)
+  let anyone check their own progress — across every quest/dungeon/raid,
+  achievements, faction standing, and general Renown respectively —
+  without needing a GM.

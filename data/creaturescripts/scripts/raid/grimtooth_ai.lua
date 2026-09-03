@@ -58,6 +58,7 @@ function onDeath(cid)
 
 	local position = monster:getPosition()
 	DungeonLib.markNearbyPlayers(position, QuestLog.storage.raid.grimtooth, 10)
+	DungeonLib.grantRenownToNearby(position, 60, 10)
 	position:sendMagicEffect(CONST_ME_MORTAREA)
 	return true
 end

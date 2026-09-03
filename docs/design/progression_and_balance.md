@@ -14,26 +14,29 @@ monster/item/npc files).
 
 ## Quest rewards
 
-| Quest | Experience | Gold | Item reward |
-|---|---:|---:|---|
-| 0. Boot Camp | 50 | 50 | Recruit's Training Blade |
-| 1. Wolves at the Doorstep | 500 | 150 | Ranger's Charm (necklace, +2 armor) |
-| 2. The Lost Locket | 300 | 100 | Corwin's Lucky Ring (+1 armor) |
-| 3. Signal the Watch | 700 | 250 | Watchman's Badge (necklace, +3 armor) |
-| 4. Sunken Vault (dungeon) | 4,000 | 1,500 | Vault Captain's Cutlass |
-| 5. Crimson Cathedral (dungeon) | 9,000 | 3,000 | Ember-Warded Amulet |
-| 10. Cinderforge Depths (raid) | 15,000 | 6,000 | Emberlord's Signet |
+| Quest | Experience | Gold | Renown | Item reward |
+|---|---:|---:|---:|---|
+| 0. Boot Camp | 50 | 50 | +10 | Recruit's Training Blade |
+| 1. Wolves at the Doorstep | 500 | 150 | +20 | Ranger's Charm (necklace, +2 armor) |
+| 2. The Lost Locket | 300 | 100 | +15 | Corwin's Lucky Ring (+1 armor) |
+| 3. Signal the Watch | 700 | 250 | +25 | Watchman's Badge (necklace, +3 armor) |
+| 4. Sunken Vault (dungeon) | 4,000 | 1,500 | *(see below)* | Vault Captain's Cutlass |
+| 5. Crimson Cathedral (dungeon) | 9,000 | 3,000 | *(see below)* | Ember-Warded Amulet |
+| 10. Cinderforge Depths (raid) | 15,000 | 6,000 | *(see below)* | Emberlord's Signet |
 
 Roughly doubling at each major tier (quests → dungeon 1 → dungeon 2 →
 raid), which is a deliberate curve, not a coincidence - keep that ratio if
-you rescale.
+you rescale. The four simple quests (0-3) grant Renown once, at their NPC
+hand-in; the dungeons and raid instead grant it per boss kill (everyone
+credited for the kill gets it, same as faction reputation) - see
+`docs/design/renown_and_pvp.md` for the full per-boss table.
 
 ## Repeatable content payouts
 
 | Content | Payout | Cadence |
 |---|---|---|
-| Daily bounty (either dungeon) | 800 gold + 100 reputation | once/day/dungeon/player |
-| Proving Grounds clear | 2,500 exp + 1,000 gold (+500 if under 5 min) | 15-min cooldown/player |
+| Daily bounty (either dungeon) | 800 gold + 100 reputation + 10 renown | once/day/dungeon/player |
+| Proving Grounds clear | 2,500 exp + 1,000 gold (+500 if under 5 min) + 15 renown | 15-min cooldown/player |
 
 ## Monster stat progression
 

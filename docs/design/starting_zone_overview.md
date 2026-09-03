@@ -162,6 +162,8 @@ installation steps. Design docs, one per content piece:
 - `docs/design/daily_bounties.md`
 - `docs/design/the_proving_grounds.md`
 - `docs/design/general_goods.md`
+- `docs/design/renown_and_pvp.md` — general Renown score: PvE gains it,
+  open-world PvP kills drain it, low Renown locks out every vendor
 - `docs/design/progression_and_balance.md` — every monster/quest reward's
   numbers in one place, for pacing/rebalancing
 - `docs/design/starting_zone_overview.md` (this file)

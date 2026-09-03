@@ -56,6 +56,7 @@ function onDeath(cid)
 	-- so this fires exactly once per encounter regardless of kill order.
 	if not siblingName or not DungeonLib.isMonsterAliveNearby(position, siblingName, 15) then
 		DungeonLib.markNearbyPlayers(position, QuestLog.storage.raid.twins, 10)
+		DungeonLib.grantRenownToNearby(position, 60, 10)
 	end
 
 	position:sendMagicEffect(CONST_ME_MORTAREA)

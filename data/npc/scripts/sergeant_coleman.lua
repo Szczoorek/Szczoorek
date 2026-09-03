@@ -46,6 +46,7 @@ local function creatureSayCallback(cid, type, msg)
 			player:addItem(QuestLog.items.recruitsTrainingBlade, 1)
 			player:addExperience(REWARD_EXPERIENCE)
 			player:addMoney(REWARD_GOLD)
+			player:addRenown(10)
 			player:setQuestStatus(QuestLog.storage.bootcamp.quest, QuestLog.status.COMPLETED)
 			npcHandler:say('Good enough. Take this blade - it\'s not much, but it\'ll do until you find better. ' ..
 				'Ranger Elyndra and Old Man Corwin both have real work if you\'re looking for it.', cid)

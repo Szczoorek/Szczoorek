@@ -45,6 +45,7 @@ function onDeath(cid)
 		local player = creature:getPlayer()
 		if player then
 			player:grantAchievement(AchievementLog.storage.fenrirsBane)
+			player:addRenown(40)
 		end
 	end
 

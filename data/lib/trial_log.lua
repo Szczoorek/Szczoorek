@@ -114,6 +114,7 @@ function TrialLog.completeRun()
 		if player then
 			player:addExperience(2500)
 			player:addMoney(1000 + bonus)
+			player:addRenown(15)
 			player:grantAchievement(AchievementLog.storage.provingGroundsChampion)
 		end
 	end

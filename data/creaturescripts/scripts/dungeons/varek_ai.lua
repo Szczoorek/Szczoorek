@@ -51,6 +51,7 @@ function onDeath(cid)
 	local position = monster:getPosition()
 	DungeonLib.markNearbyPlayers(position, QuestLog.storage.cathedral.varek, 10)
 	DungeonLib.grantReputationToNearby(position, ReputationLog.storage.orderOfTheEmber, 150, 10)
+	DungeonLib.grantRenownToNearby(position, 40, 10)
 	position:sendMagicEffect(CONST_ME_MORTAREA)
 	return true
 end

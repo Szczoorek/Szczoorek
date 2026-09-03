@@ -68,6 +68,7 @@ function onDeath(cid)
 
 	local position = monster:getPosition()
 	DungeonLib.markNearbyPlayers(position, QuestLog.storage.raid.ignareth, 10)
+	DungeonLib.grantRenownToNearby(position, 150, 10)
 	DungeonLib.broadcast('Ignareth, the Cinderlord has been extinguished! The Cinderforge Depths lie silent.')
 	position:sendMagicEffect(CONST_ME_MORTAREA)
 	return true

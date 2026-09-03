@@ -69,6 +69,7 @@ local function creatureSayCallback(cid, type, msg)
 		player:addItem(QuestLog.items.rangersCharm, 1)
 		player:addExperience(REWARD_EXPERIENCE)
 		player:addMoney(REWARD_GOLD)
+		player:addRenown(20)
 		player:setQuestStatus(QuestLog.storage.wolves, QuestLog.status.COMPLETED)
 		npcHandler:say('That\'ll do. Take this charm, and my thanks - the woods are a little safer today.', cid)
 		return true

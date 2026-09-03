@@ -6,9 +6,17 @@
 	Dialogue-driven rather than the native trade window, so standing can
 	gate individual items and stay consistent with the rest of this pack's
 	keyword-based NPCs.
+
+	Also gated on Renown (see renown_log.lua / docs/design/renown_and_pvp.md):
+	regardless of faction standing, a player whose Renown has dropped below
+	Neutral (from unprovoked open-world player kills) is refused service
+	entirely. Provisioner Nadia (data/npc/scripts/provisioner_nadia.lua)
+	enforces the same minimum independently, since she doesn't use this lib.
 ]]
 
 VendorLib = {}
+
+VendorLib.minimumRenownRank = 'Neutral'
 
 --- Builds a CALLBACK_MESSAGE_DEFAULT function for a vendor NPC.
 ---   npcHandler - that NPC's NpcHandler instance
@@ -28,6 +36,20 @@ function VendorLib.buildShopCallback(npcHandler, factionKey, items)
 		end
 
 		local player = Player(cid)
+
+		if not player:hasRenownRank(VendorLib.minimumRenownRank) then
+			if msg:find('shop') or msg:find('trade') or msg:find('buy') then
+				npcHandler:say('I know what you\'ve done out there. I won\'t deal with you.', cid)
+				return true
+			end
+			for _, entry in ipairs(items) do
+				if msg:find(entry.keyword) then
+					npcHandler:say('I know what you\'ve done out there. I won\'t deal with you.', cid)
+					return true
+				end
+			end
+			return false
+		end
 
 		if msg:find('shop') or msg:find('trade') or msg:find('buy') then
 			local lines = {}
