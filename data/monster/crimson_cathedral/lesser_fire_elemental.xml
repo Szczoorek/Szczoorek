@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Add summoned by The Flameseer at low health (enrage phase). -->
+<monster name="Lesser Fire Elemental" nameDescription="a lesser fire elemental" race="fire" experience="90" speed="200" manacost="0">
+	<health now="300" max="300"/>
+	<look type="34" corpse="2812"/>
+	<targetchange interval="2000" chance="15"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="1"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag hidehealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="fire" interval="2000" chance="100" range="1" min="30" max="50">
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+	</attacks>
+	<defenses armor="10" defense="10"/>
+	<immunities>
+		<immunity fire="1"/>
+	</immunities>
+	<loot/>
+</monster>

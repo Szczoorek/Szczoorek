@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	FRAGMENT - do not drop this file in as-is if your server already has a
+	creaturescripts.xml. Merge the <event> lines below into your existing
+	file instead. Each "name" is referenced from the matching monster's
+	<script><event name="..."/></script> block.
+-->
+<creaturescripts>
+	<event name="RustbeardAI" script="dungeons/rustbeard_ai.lua"/>
+	<event name="GrixAI" script="dungeons/grix_ai.lua"/>
+	<event name="BlackscaleAI" script="dungeons/blackscale_ai.lua"/>
+	<event name="MalacharAI" script="dungeons/malachar_ai.lua"/>
+	<event name="OpheliaAI" script="dungeons/ophelia_ai.lua"/>
+	<event name="VarekAI" script="dungeons/varek_ai.lua"/>
+	<event name="FlameseerAI" script="dungeons/flameseer_ai.lua"/>
+</creaturescripts>

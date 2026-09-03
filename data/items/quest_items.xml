@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	FRAGMENT - merge these <item> entries into your existing items.xml.
+
+	IMPORTANT: an entry here only takes effect once the matching server id
+	(20001-20012) also exists in items.otb with a client id attached - see
+	the "Installing this pack" section of the repo README for how to add
+	that. The comment on each entry below suggests what kind of existing
+	item graphic to reuse for it.
+-->
+<items>
+	<!-- ===================== Quest 1: Wolves at the Doorstep ===================== -->
+
+	<!-- reuse the graphic of any small fur/pelt item -->
+	<item id="20001" article="a" name="wolf pelt">
+		<attribute key="weight" value="800"/>
+		<attribute key="description" value="A pelt torn from a timber wolf. Ranger Elyndra asked for a handful of these."/>
+	</item>
+
+	<!-- reuse a simple amulet/charm graphic -->
+	<item id="20002" article="a" name="ranger's charm">
+		<attribute key="weight" value="30"/>
+		<attribute key="slotType" value="necklace"/>
+		<attribute key="armor" value="2"/>
+		<attribute key="description" value="A small woven charm. It smells faintly of pine."/>
+	</item>
+
+	<!-- ===================== Quest 2: The Lost Locket ===================== -->
+
+	<!-- reuse a locket/pendant graphic -->
+	<item id="20003" article="a" name="tarnished locket">
+		<attribute key="weight" value="10"/>
+		<attribute key="description" value="An old locket, its silver long since tarnished. It should be returned to Old Man Corwin."/>
+	</item>
+
+	<!-- reuse a plain ring graphic -->
+	<item id="20004" article="a" name="corwin's lucky ring">
+		<attribute key="weight" value="10"/>
+		<attribute key="slotType" value="ring"/>
+		<attribute key="armor" value="1"/>
+		<attribute key="description" value="A simple ring. Corwin swore it always brought him luck."/>
+	</item>
+
+	<!-- ===================== Dungeon 1: The Sunken Vault ===================== -->
+
+	<!-- reuse a book/ledger/parchment graphic -->
+	<item id="20005" article="a" name="sunken vault ledger">
+		<attribute key="weight" value="90"/>
+		<attribute key="description" value="Captain Blackscale's own ledger, water-stained but legible. Harbor Master Thessaly will want to see this."/>
+	</item>
+
+	<!-- reuse an existing one-handed sword graphic -->
+	<item id="20006" article="the" name="vault captain's cutlass">
+		<attribute key="weight" value="4200"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="slotType" value="weapon"/>
+		<attribute key="attack" value="38"/>
+		<attribute key="defense" value="22"/>
+		<attribute key="description" value="Captain Blackscale's own blade, still salt-crusted from the Vault."/>
+	</item>
+
+	<!-- reuse a simple iron/rusty key graphic -->
+	<item id="20007" article="a" name="rusty vault key">
+		<attribute key="weight" value="30"/>
+		<attribute key="description" value="A corroded key. It might open the barred gate deeper in the Sunken Vault."/>
+	</item>
+
+	<!-- reuse a trinket/curio graphic - purely decorative -->
+	<item id="20008" article="a" name="corsair's trophy">
+		<attribute key="weight" value="60"/>
+		<attribute key="description" value="A gaudy trinket looted from a Vault corsair. Worth nothing but a good story."/>
+	</item>
+
+	<!-- ===================== Dungeon 2: The Crimson Cathedral ===================== -->
+
+	<!-- reuse a glowing ember/coal graphic -->
+	<item id="20009" article="the" name="flameseer's ember">
+		<attribute key="weight" value="20"/>
+		<attribute key="description" value="An ember that refuses to cool, pulled from the Flameseer's ashes. Inquisitor Dane will want it."/>
+	</item>
+
+	<!-- reuse a rune/sigil/medallion graphic -->
+	<item id="20010" article="a" name="cathedral sigil">
+		<attribute key="weight" value="15"/>
+		<attribute key="description" value="A sigil torn from a cathedral guard's robes. It may unlock the inner gate."/>
+	</item>
+
+	<!-- reuse an ornate amulet graphic -->
+	<item id="20011" article="the" name="ember-warded amulet">
+		<attribute key="weight" value="35"/>
+		<attribute key="slotType" value="necklace"/>
+		<attribute key="armor" value="4"/>
+		<attribute key="absorbPercentFire" value="8"/>
+		<attribute key="description" value="Warded by Inquisitor Dane against exactly the kind of fire that once guarded the Cathedral's heart."/>
+	</item>
+
+	<!-- reuse a book graphic - purely decorative -->
+	<item id="20012" article="a" name="scarlet prayer book">
+		<attribute key="weight" value="70"/>
+		<attribute key="description" value="A prayer book bound in dyed leather. The prayers inside are... not the usual kind."/>
+	</item>
+</items>

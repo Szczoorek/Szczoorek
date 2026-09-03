@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Ranger Elyndra" script="ranger_elyndra.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="136" head="78" body="39" legs="87" feet="76" addons="3"/>
+	<parameters>
+		<parameter key="message_greet" value="Welcome, |PLAYERNAME|. The forest wolves have been bolder than usual lately. Ask me about 'quest' if you're willing to help."/>
+		<parameter key="message_farewell" value="Watch the treeline."/>
+		<parameter key="message_walkaway" value="Hmph. Suit yourself."/>
+	</parameters>
+</npc>

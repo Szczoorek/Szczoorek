@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	FRAGMENT - merge this <talkaction> line into your existing
+	talkactions.xml. access="1" restricts it to GMs/CMs and up on most
+	default group setups - raise or lower to match your own group table.
+-->
+<talkactions>
+	<talkaction words="/questreset" access="1" script="questreset.lua"/>
+</talkactions>

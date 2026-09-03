@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Bilge Rat" nameDescription="a bilge rat" race="blood" experience="10" speed="260" manacost="0">
+	<health now="35" max="35"/>
+	<look type="26" corpse="2812"/>
+	<targetchange interval="2000" chance="15"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="1"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="1"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag hidehealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="18" attack="8"/>
+	</attacks>
+	<defenses armor="3" defense="5"/>
+	<loot>
+		<item id="2148" countmax="3" chance="30000"/>
+	</loot>
+</monster>

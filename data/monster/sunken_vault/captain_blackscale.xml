@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Final boss of The Sunken Vault. See docs/design/dungeon_sunken_vault.md
+	for the full encounter writeup. AI: data/creaturescripts/scripts/dungeons/blackscale_ai.lua
+-->
+<monster name="Captain Blackscale" nameDescription="Captain Blackscale" race="blood" experience="1500" speed="230" manacost="0">
+	<health now="4200" max="4200"/>
+	<look type="130" head="95" body="20" legs="20" feet="0" addons="3" corpse="2812"/>
+	<targetchange interval="4000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag hidehealth="0"/>
+		<flag isboss="1"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="60" attack="55"/>
+	</attacks>
+	<defenses armor="28" defense="35"/>
+	<voices interval="6000" chance="10">
+		<voice sentence="You've sailed into your grave!"/>
+	</voices>
+	<script>
+		<event name="BlackscaleAI"/>
+	</script>
+	<loot>
+		<item id="2148" countmax="300" chance="100000"/>
+		<item id="20005" chance="100000"/> <!-- sunken vault ledger (QuestLog.items.sunkenVaultLedger) - guaranteed, quest item -->
+		<item id="20008" chance="40000"/> <!-- corsair's trophy (QuestLog.items.corsairsTrophy) -->
+	</loot>
+</monster>
