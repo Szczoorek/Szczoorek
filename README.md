@@ -180,5 +180,6 @@ in this pack as of the last commit that touched `data/`.
   `data/talkactions/scripts/questreset.lua`) resets one player's progress on
   a given quest (`wolves`, `locket`, `vault`, `cathedral`, or `all`) so you
   can replay it while iterating on the map.
-- `!achievements` and `!reputation` (player-facing) let anyone check their
-  own progress on the systemic layers without needing a GM.
+- `!quests`, `!achievements` and `!reputation` (player-facing) let anyone
+  check their own progress — across every quest/dungeon/raid, achievements,
+  and faction standing respectively — without needing a GM.
