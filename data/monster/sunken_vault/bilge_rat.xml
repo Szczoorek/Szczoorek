@@ -19,6 +19,9 @@
 		<attack name="melee" interval="2000" skill="18" attack="8"/>
 	</attacks>
 	<defenses armor="3" defense="5"/>
+	<script>
+		<event name="VaultTrashDeath"/>
+	</script>
 	<loot>
 		<item id="2148" countmax="3" chance="30000"/>
 	</loot>

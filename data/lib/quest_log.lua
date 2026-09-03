@@ -24,6 +24,12 @@ QuestLog.status = {
 -- Storage values (reserved range: 45000-45099)
 -- ===========================================================================
 QuestLog.storage = {
+	-- Quest 0: Boot Camp (newbie tutorial)
+	bootcamp = {
+		quest = 45002,
+		dummyDefeated = 45003,
+	},
+
 	-- Quest 1: Wolves at the Doorstep
 	wolves = 45001,
 
@@ -49,7 +55,7 @@ QuestLog.storage = {
 }
 
 -- ===========================================================================
--- Item ids (reserved range: 20001-20021 — see README.md for how to register
+-- Item ids (reserved range: 20001-20022 — see README.md for how to register
 -- these in items.otb before merging data/items/quest_items.xml)
 -- ===========================================================================
 QuestLog.items = {
@@ -87,6 +93,9 @@ QuestLog.items = {
 
 	-- World: Fenrir the Alpha
 	fenrirsFang = 20021,
+
+	-- Quest 0: Boot Camp
+	recruitsTrainingBlade = 20022,
 }
 
 -- ===========================================================================

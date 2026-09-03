@@ -14,4 +14,7 @@
 	<event name="VarekAI" script="dungeons/varek_ai.lua"/>
 	<event name="FlameseerAI" script="dungeons/flameseer_ai.lua"/>
 	<event name="FenrirAI" script="world/fenrir_ai.lua"/>
+	<event name="VaultTrashDeath" script="bounties/vault_trash_death.lua"/>
+	<event name="CathedralTrashDeath" script="bounties/cathedral_trash_death.lua"/>
+	<event name="TrainingDummyDeath" script="quests/training_dummy_death.lua"/>
 </creaturescripts>

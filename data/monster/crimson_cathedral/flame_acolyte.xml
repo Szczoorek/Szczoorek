@@ -26,6 +26,9 @@
 	<voices interval="5000" chance="10">
 		<voice sentence="Burn, heretic!"/>
 	</voices>
+	<script>
+		<event name="CathedralTrashDeath"/>
+	</script>
 	<loot>
 		<item id="2148" countmax="25" chance="70000"/>
 	</loot>

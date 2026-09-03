@@ -23,6 +23,9 @@
 	<voices interval="5000" chance="10">
 		<voice sentence="None shall pass the gate!"/>
 	</voices>
+	<script>
+		<event name="CathedralTrashDeath"/>
+	</script>
 	<loot>
 		<item id="2148" countmax="35" chance="70000"/>
 		<item id="20010" chance="8000"/> <!-- cathedral sigil (QuestLog.items.cathedralSigil), key item -->

@@ -23,6 +23,9 @@
 		<voice sentence="Get 'em!"/>
 		<voice sentence="Oi, intruder!"/>
 	</voices>
+	<script>
+		<event name="VaultTrashDeath"/>
+	</script>
 	<loot>
 		<item id="2148" countmax="15" chance="70000"/>
 		<!-- add flavor equipment drops here using ids from your own items.otb -->

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Bounty Clerk Sarna" script="bounty_clerk_sarna.lua" walkinterval="2000" floorchange="0">
+	<health now="90" max="90"/>
+	<look type="136" head="20" body="39" legs="20" feet="20" addons="0"/>
+	<parameters>
+		<parameter key="message_greet" value="|PLAYERNAME|. Both the Vault and the Cathedral always need more bodies cleared out. Ask about the 'bounty' board."/>
+		<parameter key="message_farewell" value="Bring back proof, not stories."/>
+		<parameter key="message_walkaway" value="The board resets at midnight, not before."/>
+	</parameters>
+</npc>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Quest 0 (Boot Camp): a harmless punching bag for brand-new characters
+	to practice attacking on. Never attacks back. See
+	docs/design/quest_boot_camp.md.
+-->
+<monster name="Training Dummy" nameDescription="a training dummy" race="blood" experience="0" speed="0" manacost="0">
+	<health now="90" max="90"/>
+	<look type="99" corpse="2812"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="0"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag hidehealth="0"/>
+		<flag isboss="0"/>
+	</flags>
+	<defenses armor="0" defense="0"/>
+	<script>
+		<event name="TrainingDummyDeath"/>
+	</script>
+	<loot/>
+</monster>

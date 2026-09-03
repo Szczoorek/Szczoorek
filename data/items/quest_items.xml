@@ -43,10 +43,12 @@
 
 	<!-- ===================== Dungeon 1: The Sunken Vault ===================== -->
 
-	<!-- reuse a book/ledger/parchment graphic -->
+	<!-- reuse a book/ledger/parchment graphic. Enable the "Readable" flag for
+	     this id in items.otb so the text attribute below shows on use. -->
 	<item id="20005" article="a" name="sunken vault ledger">
 		<attribute key="weight" value="90"/>
 		<attribute key="description" value="Captain Blackscale's own ledger, water-stained but legible. Harbor Master Thessaly will want to see this."/>
+		<attribute key="text" value="14th - Goblin crew grumbling about the water again. Told them to pump or drown.&#10;19th - Grix swears his 'contraption' will hold the eastern hall. I've told him twice now not to test it while I'm standing in the eastern hall.&#10;23rd - Good haul off the Thessaly line ship. Harbor master will be sending someone eventually. Let them come."/>
 	</item>
 
 	<!-- reuse an existing one-handed sword graphic -->
@@ -94,10 +96,12 @@
 		<attribute key="description" value="Warded by Inquisitor Dane against exactly the kind of fire that once guarded the Cathedral's heart."/>
 	</item>
 
-	<!-- reuse a book graphic - purely decorative -->
+	<!-- reuse a book graphic. Enable the "Readable" flag for this id in
+	     items.otb so the text attribute below shows on use. -->
 	<item id="20012" article="a" name="scarlet prayer book">
 		<attribute key="weight" value="70"/>
 		<attribute key="description" value="A prayer book bound in dyed leather. The prayers inside are... not the usual kind."/>
+		<attribute key="text" value="&quot;What does not burn was never pure. What burns and rises was never truly lost.&quot;&#10;&#10;- recorded sermon, the Flameseer, third hour of vigil"/>
 	</item>
 
 	<!-- ============ Harbor Trade Concern reputation gear (see docs/design/factions_and_achievements.md) ============ -->
@@ -175,5 +179,16 @@
 	<item id="20021" article="the" name="fenrir's fang">
 		<attribute key="weight" value="50"/>
 		<attribute key="description" value="A single fang, longer than a man's finger, torn from the alpha of the forest pack."/>
+	</item>
+
+	<!-- ===================== Quest 0: Boot Camp ===================== -->
+
+	<!-- reuse a basic starter sword/dagger graphic -->
+	<item id="20022" article="a" name="recruit's training blade">
+		<attribute key="weight" value="1800"/>
+		<attribute key="weaponType" value="sword"/>
+		<attribute key="slotType" value="weapon"/>
+		<attribute key="attack" value="12"/>
+		<attribute key="description" value="Standard issue. Sergeant Coleman hands these out to anyone who survives the dummy."/>
 	</item>
 </items>
