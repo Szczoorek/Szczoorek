@@ -79,7 +79,9 @@ docs/design/                  Lore, encounter design, loot tables & map
 
 `docs/design/starting_zone_overview.md` ties all of the above into one
 suggested map layout (hub town, wilds, dungeon entrances) — read that one
-first if you're about to start building.
+first if you're about to start building. `docs/design/progression_and_balance.md`
+pulls every monster's HP/EXP and every quest's reward into one reference
+table, for pacing and rebalancing.
 
 Each design doc contains the full story, NPC dialogue tree, encounter
 mechanics for every boss, loot table and a suggested map layout — read it
