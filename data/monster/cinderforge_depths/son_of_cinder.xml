@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Add summoned by Ignareth, the Cinderlord at 50% health (phase 2). -->
+<monster name="Son of Cinder" nameDescription="a son of cinder" race="fire" experience="150" speed="220" manacost="0">
+	<health now="450" max="450"/>
+	<look type="34" corpse="2812"/>
+	<targetchange interval="3000" chance="10"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="1"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag hidehealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="fire" interval="2000" chance="100" range="1" min="35" max="55"/>
+	</attacks>
+	<defenses armor="20" defense="20"/>
+	<immunities>
+		<immunity fire="1"/>
+	</immunities>
+	<loot/>
+</monster>

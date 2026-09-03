@@ -24,12 +24,18 @@ other.
                      [Village NPCs]     |
                       - Ranger Elyndra  |
                       - Old Man Corwin  |
+                      - Watchman Farro  |
                       - Bounty Clerk Sarna
                                         |
                               [Cathedral approach]
                                - Inquisitor Dane
                                - Armsmaster Cael
                                - Crimson Cathedral entrance
+                                        |
+                                        |
+                          [Cinderforge Depths entrance]
+                           - Forge Marshal Aldric
+                           - achievement-gated raid entrance
 ```
 
 ## Zone-by-zone
@@ -85,6 +91,16 @@ a dead-end off the village is fine.
   the fire — see `docs/design/dungeon_crimson_cathedral.md`.
 - The Crimson Cathedral itself is the building they're camped outside of.
 
+### The Cinderforge Depths entrance (raid)
+- **Forge Marshal Aldric** stands at the entrance — logically placed
+  somewhere reachable from both the docks and the cathedral approach,
+  since he requires proof from both. Placing the entrance beneath or
+  behind the Crimson Cathedral (as the design doc's story suggests) keeps
+  it out of the way of new characters while still being a short walk from
+  both other dungeons. See `docs/design/dungeon_cinderforge_depths.md`.
+- The entrance itself is gated: nothing to build here beyond the gate
+  object and its usable action - see that doc's map checklist.
+
 ## Suggested play order
 
 1. **Boot Camp** — every brand-new character's literal first minute, before
@@ -97,14 +113,17 @@ a dead-end off the village is fine.
    ~1400-4200 HP bosses (see the dungeon doc for per-boss numbers).
 5. **The Crimson Cathedral** — bigger, four-boss follow-up dungeon for a
    fuller group.
-6. **Fenrir the Alpha** — not gated to any point in this order; he's ambient
+6. **The Cinderforge Depths** — a full raid tier above both starter
+   dungeons, unlocked only after clearing both (see its doc's gating
+   section). The pack's current endgame.
+7. **Fenrir the Alpha** — not gated to any point in this order; he's ambient
    world content a player might stumble into any time after Quest 1 opens
    up the forest.
-7. **Daily bounties** — repeatable content for after steps 4-5, not a
+8. **Daily bounties** — repeatable content for after steps 4-5, not a
    one-time step at all.
 
 Reputation and achievements aren't a separate step — they accrue
-automatically as players work through steps 4, 5 and 7.
+automatically as players work through steps 4, 5, 6 and 8.
 
 ## Full file index
 
@@ -117,6 +136,7 @@ installation steps. Design docs, one per content piece:
 - `docs/design/quest_signal_the_watch.md`
 - `docs/design/dungeon_sunken_vault.md`
 - `docs/design/dungeon_crimson_cathedral.md`
+- `docs/design/dungeon_cinderforge_depths.md`
 - `docs/design/factions_and_achievements.md`
 - `docs/design/fenrir_the_alpha.md`
 - `docs/design/daily_bounties.md`

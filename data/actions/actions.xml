@@ -16,6 +16,9 @@
 	<action actionid="10004" script="quests/signal_beacon.lua"/>
 	<action actionid="10005" script="quests/signal_beacon.lua"/>
 
+	<!-- Raid: The Cinderforge Depths - achievement-gated entrance -->
+	<action actionid="10022" script="raid/cinderforge_gate.lua"/>
+
 	<!-- Dungeon 2: The Crimson Cathedral - the inner gate -->
 	<action actionid="10021" script="dungeons/crimson_cathedral_gate.lua"/>
 </actions>

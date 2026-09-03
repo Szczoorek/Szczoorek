@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Forge Marshal Aldric" script="forge_marshal_aldric.lua" walkinterval="2000" floorchange="0">
+	<health now="200" max="200"/>
+	<look type="129" head="0" body="20" legs="20" feet="0" addons="3"/>
+	<parameters>
+		<parameter key="message_greet" value="|PLAYERNAME|. Few earn the right to enter the Cinderforge Depths. Ask about the 'depths' if you think you have."/>
+		<parameter key="message_farewell" value="The forge remembers everything."/>
+		<parameter key="message_walkaway" value="Come back when you've proven more."/>
+	</parameters>
+</npc>

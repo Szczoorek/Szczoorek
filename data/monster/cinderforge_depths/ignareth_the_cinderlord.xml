@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Final boss of The Cinderforge Depths. See
+	docs/design/dungeon_cinderforge_depths.md. AI: ignareth_ai.lua
+-->
+<monster name="Ignareth, the Cinderlord" nameDescription="Ignareth, the Cinderlord" race="fire" experience="8000" speed="230" manacost="0">
+	<health now="20000" max="20000"/>
+	<look type="34" corpse="2812"/>
+	<targetchange interval="4000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag hidehealth="0"/>
+		<flag isboss="1"/>
+	</flags>
+	<attacks>
+		<attack name="fire" interval="2000" chance="100" range="1" min="45" max="80"/>
+	</attacks>
+	<defenses armor="42" defense="48"/>
+	<immunities>
+		<immunity fire="1"/>
+	</immunities>
+	<voices interval="6000" chance="10">
+		<voice sentence="I AM THE FORGE'S WILL MADE FLAME!"/>
+	</voices>
+	<script>
+		<event name="IgnarethAI"/>
+	</script>
+	<loot>
+		<item id="2148" countmax="1000" chance="100000"/>
+		<item id="20028" chance="35000"/> <!-- ignareth's molten crown (QuestLog.items.ignarethsMoltenCrown) -->
+		<item id="20029" chance="100000"/> <!-- cinderforge emblem (QuestLog.items.cinderforgeEmblem) - guaranteed, quest item -->
+	</loot>
+</monster>

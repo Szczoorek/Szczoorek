@@ -17,4 +17,9 @@
 	<event name="VaultTrashDeath" script="bounties/vault_trash_death.lua"/>
 	<event name="CathedralTrashDeath" script="bounties/cathedral_trash_death.lua"/>
 	<event name="TrainingDummyDeath" script="quests/training_dummy_death.lua"/>
+	<event name="GrimtoothAI" script="raid/grimtooth_ai.lua"/>
+	<event name="TwinsAI" script="raid/twins_ai.lua"/>
+	<event name="SlagmawAI" script="raid/slagmaw_ai.lua"/>
+	<event name="AshgraveAI" script="raid/ashgrave_ai.lua"/>
+	<event name="IgnarethAI" script="raid/ignareth_ai.lua"/>
 </creaturescripts>

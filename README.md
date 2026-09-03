@@ -33,16 +33,20 @@ data/
 
   monster/quest_bootcamp/     Training Dummy for Quest 0
   monster/quest_wolves/      Trash mob for Quest 1
-  monster/sunken_vault/       All creatures for Dungeon 1
-  monster/crimson_cathedral/  All creatures for Dungeon 2
-  monster/world/               Open-world rare spawn (Fenrir the Alpha)
+  monster/quest_signal/       Trash mob for Quest 3
+  monster/sunken_vault/        All creatures for Dungeon 1
+  monster/crimson_cathedral/    All creatures for Dungeon 2
+  monster/cinderforge_depths/    All creatures for the Raid
+  monster/world/                  Open-world rare spawn (Fenrir the Alpha)
 
   creaturescripts/scripts/quests/     Quest 0's training dummy death hook
-  creaturescripts/scripts/dungeons/  Boss AI: spawn yells, phase changes,
-                                      enrage, adds, on-death rewards & broadcasts
+  creaturescripts/scripts/dungeons/  Boss AI for Dungeons 1 & 2: spawn
+                                      yells, phase changes, enrage, adds,
+                                      on-death rewards & broadcasts
+  creaturescripts/scripts/raid/       Boss AI for the Raid
   creaturescripts/scripts/world/      Fenrir the Alpha's AI
   creaturescripts/scripts/bounties/    Trash-kill credit for daily bounties
-  actions/                            Quest chest, dungeon gates/levers
+  actions/                            Quest chest, dungeon/raid gates & levers
   talkactions/                        /questreset (GM), !achievements, !reputation (players)
   globalevents/                       Fenrir the Alpha's chance-based respawn timer
 
@@ -68,6 +72,7 @@ docs/design/                  Lore, encounter design, loot tables & map
 | 7 | **Achievements** | systemic (spans everything) | `docs/design/factions_and_achievements.md` |
 | 8 | **Fenrir the Alpha** | open-world rare spawn | `docs/design/fenrir_the_alpha.md` |
 | 9 | **Daily bounties** | repeatable trash-clear dailies for dungeons 4 & 5 | `docs/design/daily_bounties.md` |
+| 10 | **The Cinderforge Depths** | 5-boss raid (Molten Core/BRD-inspired), gated behind dungeons 4 & 5's achievements | `docs/design/dungeon_cinderforge_depths.md` |
 
 `docs/design/starting_zone_overview.md` ties all of the above into one
 suggested map layout (hub town, wilds, dungeon entrances) — read that one
@@ -95,9 +100,9 @@ the map" lives there rather than in code comments.
 3. **Add the items to `items.otb` before merging `items.xml`.** `items.xml`
    only carries *flags and text* for a server id that must already exist in
    `items.otb` — it cannot invent a new id by itself. `data/items/quest_items.xml`
-   reserves server ids **20001–20023** for this pack:
+   reserves server ids **20001–20030** for this pack:
    - Use your Item Editor (or otb generator of choice) to add entries for ids
-     20001–20023 in `items.otb`. Each item's design doc / comment names what
+     20001–20030 in `items.otb`. Each item's design doc / comment names what
      kind of object it is (a small trinket, a book, a key, a piece of jewellery,
      a one-handed sword, a piece of armor) — reuse the client sprite of any
      existing similar item, since these are new server ids riding on an
@@ -106,7 +111,7 @@ the map" lives there rather than in code comments.
      "Readable" flag for those two ids in items.otb so it displays on use.
    - Then merge the contents of `data/items/quest_items.xml` into your real
      `items.xml`.
-   - If ids 20001–20023 collide with something you already use, renumber them
+   - If ids 20001–20030 collide with something you already use, renumber them
      consistently across `quest_items.xml` and every script that references
      an item id by name via the constants in `data/lib/quest_log.lua`
      (`QuestLog.items`) — every script pulls ids from that table, so it's a

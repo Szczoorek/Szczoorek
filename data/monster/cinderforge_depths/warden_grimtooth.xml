@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Boss #1 of The Cinderforge Depths. A DPS-race encounter: a hard
+	berserk timer instead of a health-based enrage. See
+	docs/design/dungeon_cinderforge_depths.md. AI: grimtooth_ai.lua
+-->
+<monster name="Warden Grimtooth" nameDescription="Warden Grimtooth" race="blood" experience="2600" speed="220" manacost="0">
+	<health now="9000" max="9000"/>
+	<look type="130" head="0" body="20" legs="20" feet="0" addons="3" corpse="2812"/>
+	<targetchange interval="4000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag hidehealth="0"/>
+		<flag isboss="1"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="65" attack="60"/>
+	</attacks>
+	<defenses armor="36" defense="42"/>
+	<voices interval="6000" chance="10">
+		<voice sentence="The forge does not tire. Neither do I."/>
+	</voices>
+	<script>
+		<event name="GrimtoothAI"/>
+	</script>
+	<loot>
+		<item id="2148" countmax="500" chance="100000"/>
+		<item id="20024" chance="30000"/> <!-- grimtooth's warhammer (QuestLog.items.grimtoothsWarhammer) -->
+	</loot>
+</monster>

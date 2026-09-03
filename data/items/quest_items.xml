@@ -201,4 +201,68 @@
 		<attribute key="armor" value="3"/>
 		<attribute key="description" value="Issued by Watchman Farro to anyone who helped light the signal beacons."/>
 	</item>
+
+	<!-- ===================== Raid: The Cinderforge Depths ===================== -->
+	<!-- Entry gated behind the Vault Cleaner and Cathedral's Bane achievements -
+	     see docs/design/dungeon_cinderforge_depths.md. This gear tier sits above
+	     the two starter dungeons' rewards; scale armor/attack values to match
+	     wherever your server's overall progression actually tops out. -->
+
+	<!-- reuse a two-handed hammer/maul graphic -->
+	<item id="20024" article="the" name="grimtooth's warhammer">
+		<attribute key="weight" value="8800"/>
+		<attribute key="weaponType" value="club"/>
+		<attribute key="slotType" value="two-handed"/>
+		<attribute key="attack" value="50"/>
+		<attribute key="description" value="Dropped by Warden Grimtooth. Still warm from the forge."/>
+	</item>
+
+	<!-- reuse a plate gauntlets graphic -->
+	<item id="20025" article="the" name="twinforged gauntlets">
+		<attribute key="weight" value="1200"/>
+		<attribute key="slotType" value="hands"/>
+		<attribute key="armor" value="14"/>
+		<attribute key="description" value="Forged in pairs, same as the smiths who made them - one for Kex, one for Dross."/>
+	</item>
+
+	<!-- reuse a heavy scaled boots graphic -->
+	<item id="20026" article="the" name="slagmawhide boots">
+		<attribute key="weight" value="900"/>
+		<attribute key="slotType" value="feet"/>
+		<attribute key="armor" value="12"/>
+		<attribute key="description" value="Cured from Slagmaw's own hide. Still smells faintly of sulfur."/>
+	</item>
+
+	<!-- reuse an ornate shield graphic -->
+	<item id="20027" article="the" name="ashgrave's reliquary">
+		<attribute key="weight" value="4600"/>
+		<attribute key="slotType" value="shield"/>
+		<attribute key="armor" value="18"/>
+		<attribute key="description" value="High Templar Ashgrave's own reliquary shield. It no longer glows."/>
+	</item>
+
+	<!-- reuse an ornate crown/circlet graphic - the pack's best-in-slot headpiece -->
+	<item id="20028" article="the" name="ignareth's molten crown">
+		<attribute key="weight" value="1100"/>
+		<attribute key="slotType" value="head"/>
+		<attribute key="armor" value="16"/>
+		<attribute key="absorbPercentFire" value="10"/>
+		<attribute key="description" value="Ignareth's crown, cooled at last. It still radiates a faint heat."/>
+	</item>
+
+	<!-- reuse a medallion/rune graphic. Enable the "Readable" flag for this
+	     id in items.otb if you'd like a text attribute added to it later. -->
+	<item id="20029" article="the" name="cinderforge emblem">
+		<attribute key="weight" value="25"/>
+		<attribute key="description" value="Ignareth's own emblem, still faintly warm. Forge Marshal Aldric will want to see this."/>
+	</item>
+
+	<!-- reuse an ornate ring graphic -->
+	<item id="20030" article="the" name="emberlord's signet">
+		<attribute key="weight" value="10"/>
+		<attribute key="slotType" value="ring"/>
+		<attribute key="armor" value="5"/>
+		<attribute key="absorbPercentFire" value="5"/>
+		<attribute key="description" value="Cast from the last of Ignareth's molten core. Awarded by Forge Marshal Aldric."/>
+	</item>
 </items>

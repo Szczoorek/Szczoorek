@@ -12,15 +12,17 @@
 AchievementLog = {}
 
 AchievementLog.storage = {
-	vaultCleaner = 45110,   -- complete "Secrets of the Sunken Vault"
-	cathedralsBane = 45111, -- complete "Purge the Crimson Cathedral"
-	fenrirsBane = 45112,    -- slay Fenrir the Alpha (see fenrir_the_alpha.xml)
+	vaultCleaner = 45110,        -- complete "Secrets of the Sunken Vault"
+	cathedralsBane = 45111,      -- complete "Purge the Crimson Cathedral"
+	fenrirsBane = 45112,         -- slay Fenrir the Alpha (see fenrir_the_alpha.xml)
+	cinderforgeConqueror = 45113, -- complete "The Cinderforge Depths" raid
 }
 
 AchievementLog.names = {
 	[AchievementLog.storage.vaultCleaner] = 'Vault Cleaner',
 	[AchievementLog.storage.cathedralsBane] = "Cathedral's Bane",
 	[AchievementLog.storage.fenrirsBane] = "Fenrir's Bane",
+	[AchievementLog.storage.cinderforgeConqueror] = 'Cinderforge Conqueror',
 }
 
 -- Order to display achievements in for !achievements, since pairs() over
@@ -29,6 +31,7 @@ AchievementLog.order = {
 	AchievementLog.storage.vaultCleaner,
 	AchievementLog.storage.cathedralsBane,
 	AchievementLog.storage.fenrirsBane,
+	AchievementLog.storage.cinderforgeConqueror,
 }
 
 -- ===========================================================================

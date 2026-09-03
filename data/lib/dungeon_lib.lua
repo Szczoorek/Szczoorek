@@ -121,6 +121,51 @@ function DungeonLib.markNearbyPlayers(position, storageKey, radius)
 	end
 end
 
+--- Returns the lowest-health-percentage player within `radius` tiles of
+--- `position` (excluding `ignoreCreature`, typically the caster). Used by
+--- "swallow the weakest target" style boss abilities.
+function DungeonLib.findLowestHealthPlayer(position, radius, ignoreCreature)
+	local best, bestRatio = nil, 2.0
+	local spectators = Game.getSpectators(position, false, false, radius, radius, radius, radius)
+	for _, creature in ipairs(spectators) do
+		local player = creature:getPlayer()
+		if player and creature ~= ignoreCreature then
+			local ratio = player:getHealth() / player:getMaxHealth()
+			if ratio < bestRatio then
+				best, bestRatio = player, ratio
+			end
+		end
+	end
+	return best
+end
+
+--- True if a monster named `monsterName` is alive within `radius` tiles of
+--- `position`. Used by paired/linked boss encounters to check whether their
+--- counterpart is still up.
+function DungeonLib.isMonsterAliveNearby(position, monsterName, radius)
+	local spectators = Game.getSpectators(position, false, false, radius, radius, radius, radius)
+	for _, creature in ipairs(spectators) do
+		local monster = creature:getMonster()
+		if monster and monster:getName() == monsterName then
+			return true
+		end
+	end
+	return false
+end
+
+--- Seconds since the monster's first onThink tick (call once per tick with
+--- the same `engageStorageKey`). Records "now" the first time it's called
+--- for a given monster instance and returns 0 that first time. Used for
+--- berserk/enrage timers that trigger on fight duration rather than health.
+function DungeonLib.secondsSinceEngaged(monster, engageStorageKey)
+	local engagedAt = monster:getStorageValue(engageStorageKey)
+	if engagedAt <= 0 then
+		monster:setStorageValue(engageStorageKey, os.time())
+		return 0
+	end
+	return os.time() - engagedAt
+end
+
 --- Grants `amount` reputation with `factionKey` (see reputation_log.lua) to
 --- every player within `radius` tiles of `position`. Used from boss
 --- onDeath handlers alongside markNearbyPlayers.

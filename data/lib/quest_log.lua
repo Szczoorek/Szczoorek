@@ -60,10 +60,20 @@ QuestLog.storage = {
 		varek = 45033,     -- 1 once Highlord Varek is dead
 		flameseer = 45034, -- 1 once The Flameseer is dead
 	},
+
+	-- Raid: The Cinderforge Depths (gated behind both dungeons above)
+	raid = {
+		quest = 45040,     -- overall quest status (NPC-facing)
+		grimtooth = 45041, -- 1 once Warden Grimtooth is dead
+		twins = 45042,     -- 1 once both Twin Forgesmiths are dead
+		slagmaw = 45043,   -- 1 once Slagmaw the Devourer is dead
+		ashgrave = 45044,  -- 1 once High Templar Ashgrave is dead
+		ignareth = 45045,  -- 1 once Ignareth, the Cinderlord is dead
+	},
 }
 
 -- ===========================================================================
--- Item ids (reserved range: 20001-20023 — see README.md for how to register
+-- Item ids (reserved range: 20001-20030 — see README.md for how to register
 -- these in items.otb before merging data/items/quest_items.xml)
 -- ===========================================================================
 QuestLog.items = {
@@ -107,6 +117,15 @@ QuestLog.items = {
 
 	-- Quest 3: Signal the Watch
 	watchmansBadge = 20023,
+
+	-- Raid: The Cinderforge Depths
+	grimtoothsWarhammer = 20024,
+	twinforgedGauntlets = 20025,
+	slagmawhideBoots = 20026,
+	ashgravesReliquary = 20027,
+	ignarethsMoltenCrown = 20028,
+	cinderforgeEmblem = 20029,
+	emberlordsSignet = 20030,
 }
 
 -- ===========================================================================
