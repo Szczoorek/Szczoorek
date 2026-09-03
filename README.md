@@ -146,6 +146,32 @@ the map" lives there rather than in code comments.
    it at the real position once you've built the Timber Wolf forest (see
    `docs/design/fenrir_the_alpha.md`).
 
+## Verifying the pack
+
+`tools/verify_pack.sh` runs static sanity checks over the whole `data/`
+tree - no live TFS server needed, which matters since this pack was
+written without one to test against. It catches Lua syntax errors,
+malformed XML, a monster's `<script>` referencing an unregistered
+creaturescript event, a registered event/action/talkaction/globalevent
+whose script file is missing, duplicate actionid/itemid/event-name/
+talkaction-word/globalevent-name registrations that would silently shadow
+one another, item ids used in Lua but undefined in `quest_items.xml` (or
+vice versa), storage values reused across different libs, and monster
+names referenced in scripts that don't exactly match any defined
+monster's `name=` attribute (a typo there fails silently at runtime -
+`Game.createMonster`/`Game.getSpectators` just won't find anything).
+
+Requires `luac` (any Lua 5.x) and `xmllint` on `PATH`. Run it after making
+any change to this pack:
+
+```sh
+tools/verify_pack.sh
+```
+
+Exits 0 and prints "All checks passed." when clean; otherwise prints one
+or more `FAIL:` lines and exits 1. This was run clean against every file
+in this pack as of the last commit that touched `data/`.
+
 ## Testing
 
 - `/questreset <player name>, <quest>` (GM-only talkaction, see
