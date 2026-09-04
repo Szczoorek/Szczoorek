@@ -26,8 +26,8 @@ cooldown rather than a price-per-use.
 
 | Piece | Path |
 |---|---|
-| NPC | `data/npc/provisioner_nadia.xml` + `.../scripts/provisioner_nadia.lua` |
-| Use scripts | `data/actions/scripts/consumables/{healing_draught,greater_healing_draught,travelers_hearthstone}.lua` (registered by **itemid**, not actionid - see `data/actions/actions.xml`) |
+| NPC | `data/npc/provisioner_nadia.lua` |
+| Use scripts | `data/scripts/actions/consumables/{healing_draught,greater_healing_draught,travelers_hearthstone}.lua` (each self-registers via `:id(itemid)`, not `:aid()` - these are ordinary carried items, not map objects) |
 | Items | `QuestLog.items.{healingDraught,greaterHealingDraught,travelersHearthstone}` = 20031-20033 |
 | Storage | `QuestLog.storage.hearthstoneCooldown` = 45051 (per player) |
 
@@ -35,7 +35,7 @@ cooldown rather than a price-per-use.
 
 - [ ] Place Provisioner Nadia in the village hub, near the other NPCs.
 - [ ] Update `HOME_POSITION` in
-      `data/actions/scripts/consumables/travelers_hearthstone.lua` to the
+      `data/scripts/actions/consumables/travelers_hearthstone.lua` to the
       real village hub bind spot once it exists on your map - it's a
       placeholder (`Position(1000, 1000, 7)`) until then.
 - [ ] No action/unique ids required for the NPC; the three consumables

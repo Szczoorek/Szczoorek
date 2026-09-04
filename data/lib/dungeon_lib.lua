@@ -2,7 +2,7 @@
 	dungeon_lib.lua
 
 	Small helper library used by boss AI creaturescripts (see
-	data/creaturescripts/scripts/dungeons/*.lua). Keeps the individual boss
+	data/scripts/creaturescripts/dungeons/*.lua). Keeps the individual boss
 	scripts short and readable by centralising the "hit everyone nearby",
 	"heal an ally" and "summon an add" boilerplate.
 

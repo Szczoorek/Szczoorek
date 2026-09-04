@@ -35,7 +35,7 @@ zones those monsters come from.
 - **Per-player cooldown**: 15 minutes between attempts, tracked on the
   player (`TrialLog.storage.lastAttempt`).
 - **Wave progression**: a background check
-  (`data/globalevents/scripts/trial_tick.lua`, every 5s) watches the arena;
+  (`data/scripts/globalevents/trial_tick.lua`, every 5s) watches the arena;
   once every monster from the current wave is dead, the next wave spawns
   automatically. No lever-pulling between waves.
 - **Completion**: clearing wave 5 pays out 2,500 experience + 1,000 gold
@@ -64,9 +64,9 @@ a time. Practical implications:
 | Piece | Path |
 |---|---|
 | Lib | `data/lib/trial_log.lua` |
-| Lever | `data/actions/scripts/trial/proving_grounds_lever.lua` (actionid 10041) |
-| Wave-progression timer | `data/globalevents/scripts/trial_tick.lua` + `globalevents.xml` |
-| NPC | `data/npc/trial_marshal_vex.xml` + `.../scripts/trial_marshal_vex.lua` |
+| Lever | `data/scripts/actions/trial/proving_grounds_lever.lua` (actionid 10041) |
+| Wave-progression timer | `data/scripts/globalevents/trial_tick.lua` (self-registering `GlobalEvent`) |
+| NPC | `data/npc/trial_marshal_vex.lua` |
 | Storage | `TrialLog.storage.lastAttempt` = 45050 (per player) |
 | Achievement | `AchievementLog.storage.provingGroundsChampion` = 45114 |
 

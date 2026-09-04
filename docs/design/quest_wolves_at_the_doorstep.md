@@ -34,9 +34,9 @@ with a small Timber Wolf spawn (4-8 wolves is plenty).
 
 | Piece | Path |
 |---|---|
-| NPC definition | `data/npc/ranger_elyndra.xml` |
-| NPC dialogue | `data/npc/scripts/ranger_elyndra.lua` |
-| Monster | `data/monster/quest_wolves/timber_wolf.xml` |
+| NPC definition | `data/npc/ranger_elyndra.lua` |
+| NPC dialogue | `data/npc/ranger_elyndra.lua` |
+| Monster | `data/monster/quest_wolves/timber_wolf.lua` |
 | Storage | `QuestLog.storage.wolves` = 45001 (`data/lib/quest_log.lua`) |
 | Items | `QuestLog.items.wolfPelt` = 20001, `QuestLog.items.rangersCharm` = 20002 |
 

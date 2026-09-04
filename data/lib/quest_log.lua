@@ -77,7 +77,7 @@ QuestLog.storage = {
 
 -- ===========================================================================
 -- Item ids (reserved range: 20001-20033 — see README.md for how to register
--- these in items.otb before merging data/items/quest_items.xml)
+-- these via items.xml/appearances.dat before merging data/items/quest_items.xml)
 -- ===========================================================================
 QuestLog.items = {
 	-- Quest 1

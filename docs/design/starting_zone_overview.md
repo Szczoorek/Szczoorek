@@ -78,7 +78,7 @@ road to the docks/cathedral; they don't need their own dedicated area.
 ### Timber Wolf forest
 North of the village. A single connected wood, not a maze - this is meant
 to be a quick first-quest zone.
-- Timber Wolf spawn (`data/monster/quest_wolves/timber_wolf.xml`), see
+- Timber Wolf spawn (`data/monster/quest_wolves/timber_wolf.lua`), see
   `docs/design/quest_wolves_at_the_doorstep.md`.
 - Fenrir the Alpha's spawn point lives somewhere in this same forest, see
   `docs/design/fenrir_the_alpha.md` — pick a clearing distinct from the

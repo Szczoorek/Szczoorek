@@ -14,7 +14,7 @@ and death so players elsewhere have a reason to head over and check.
 
 ## Mechanics
 
-`data/monster/world/fenrir_the_alpha.xml` · AI: `data/creaturescripts/scripts/world/fenrir_ai.lua`
+`data/monster/world/fenrir_the_alpha.lua` · AI: `data/scripts/creaturescripts/world/fenrir_ai.lua`
 
 - Intro howl on engage.
 - At **50% health** (once): howls again, gets a speed boost, and calls in
@@ -25,8 +25,8 @@ and death so players elsewhere have a reason to head over and check.
 
 ## Spawn timer
 
-`data/globalevents/scripts/fenrir_respawn.lua` (registered via
-`data/globalevents/globalevents.xml`) checks every **30 minutes** whether
+`data/scripts/globalevents/fenrir_respawn.lua` (a self-registering
+`GlobalEvent('FenrirRespawnCheck')`) checks every **30 minutes** whether
 Fenrir is already alive near his spawn point; if not, it rolls a **15%**
 chance to spawn him. That works out to an *expected* respawn roughly every
 3-4 hours, but with enough randomness that players can't set a watch by it
@@ -34,19 +34,19 @@ chance to spawn him. That works out to an *expected* respawn roughly every
 
 **The spawn position in that script is a placeholder** (`Position(1000,
 1000, 7)`) - update `FENRIR_SPAWN_POSITION` in
-`data/globalevents/scripts/fenrir_respawn.lua` to the real coordinates once
+`data/scripts/globalevents/fenrir_respawn.lua` to the real coordinates once
 the forest exists on your map. Tune `SPAWN_CHANCE_PERCENT` and the
-30-minute `interval` in `globalevents.xml` to taste - lower chance +
-shorter interval gives smoother variance for the same expected respawn
-time, if you'd rather.
+30-minute `:interval(...)` call at the bottom of that same script to
+taste - lower chance + shorter interval gives smoother variance for the
+same expected respawn time, if you'd rather.
 
 ## Files
 
 | Piece | Path |
 |---|---|
-| Monster | `data/monster/world/fenrir_the_alpha.xml` |
-| AI | `data/creaturescripts/scripts/world/fenrir_ai.lua` (registered in `creaturescripts.xml` as `FenrirAI`) |
-| Spawn timer | `data/globalevents/scripts/fenrir_respawn.lua` + `data/globalevents/globalevents.xml` |
+| Monster | `data/monster/world/fenrir_the_alpha.lua` |
+| AI | `data/scripts/creaturescripts/world/fenrir_ai.lua` (two CreatureEvents, `FenrirAIThink`/`FenrirAIDeath`, attached to the monster via `mType:registerEvent(...)`) |
+| Spawn timer | `data/scripts/globalevents/fenrir_respawn.lua` (self-registering `GlobalEvent`) |
 | Achievement | `AchievementLog.storage.fenrirsBane` = 45112 |
 | Item | `QuestLog.items.fenrirsFang` = 20021 |
 

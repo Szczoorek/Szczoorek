@@ -34,9 +34,9 @@ dealt with.
 
 | Piece | Path |
 |---|---|
-| NPC | `data/npc/watchman_farro.xml` + `.../scripts/watchman_farro.lua` |
-| Beacon action | `data/actions/scripts/quests/signal_beacon.lua` (actionids 10003/10004/10005) |
-| Trash monster | `data/monster/quest_signal/roadside_bandit.xml` |
+| NPC | `data/npc/watchman_farro.lua` |
+| Beacon action | `data/scripts/actions/quests/signal_beacon.lua` (actionids 10003/10004/10005) |
+| Trash monster | `data/monster/quest_signal/roadside_bandit.lua` |
 | Storage | `QuestLog.storage.signal.{quest,beaconNorth,beaconEast,beaconSouth}` = 45004-45007 |
 | Item | `QuestLog.items.watchmansBadge` = 20023 |
 
@@ -48,6 +48,6 @@ dealt with.
 - [ ] Place three existing brazier/torch-stand-looking map objects around
       the outskirts (north, east, south of the village) and give them
       actionids **10003**, **10004** and **10005** respectively. These
-      reuse whatever decorative torch graphic your `items.otb` already
-      has - no new item id needed for the beacons themselves.
+      reuse whatever decorative torch/brazier item already exists in your
+      `items.xml` - no new item id needed for the beacons themselves.
 - [ ] Scatter 2-3 Roadside Bandits near each beacon.

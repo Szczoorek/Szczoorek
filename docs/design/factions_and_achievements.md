@@ -95,8 +95,8 @@ Players check their own list with `!achievements`.
 | Reputation lib | `data/lib/reputation_log.lua` |
 | Achievement lib | `data/lib/achievement_log.lua` |
 | Vendor dialogue lib | `data/lib/vendor_lib.lua` |
-| Vendor NPCs | `data/npc/{quartermaster_reyes,armsmaster_cael}.xml` + `.../scripts/...lua` |
-| Player commands | `data/talkactions/scripts/{achievements,reputation}.lua` |
+| Vendor NPCs | `data/npc/{quartermaster_reyes,armsmaster_cael}.lua` |
+| Player commands | `data/scripts/talkactions/{achievements,reputation}.lua` |
 | Storage | `ReputationLog.storage.*` = 45100-45101, `AchievementLog.storage.*` = 45110-45112 |
 
 ## Map checklist

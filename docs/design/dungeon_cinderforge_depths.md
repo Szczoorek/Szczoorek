@@ -24,7 +24,7 @@ themselves against the Vault and the Cathedral are allowed near it.
 Entry is locked behind **both** the Vault Cleaner and Cathedral's Bane
 achievements (`AchievementLog.storage`, see
 `docs/design/factions_and_achievements.md`), checked at the entrance gate
-itself (`data/actions/scripts/raid/cinderforge_gate.lua`) - not by talking
+itself (`data/scripts/actions/raid/cinderforge_gate.lua`) - not by talking
 to the NPC first. A player without both achievements gets turned away at
 the gate with an explanation; Forge Marshal Aldric gives the same
 explanation in dialogue if asked before qualifying.
@@ -127,12 +127,12 @@ this point.
 
 | Piece | Path |
 |---|---|
-| NPC | `data/npc/forge_marshal_aldric.xml` + `.../scripts/forge_marshal_aldric.lua` |
+| NPC | `data/npc/forge_marshal_aldric.lua` |
 | Trash monsters | `data/monster/cinderforge_depths/{forge_slave,cinderforge_smelter,molten_hound}.xml` |
 | Add monsters | `data/monster/cinderforge_depths/{ember_sentinel,son_of_cinder}.xml` |
 | Bosses | `data/monster/cinderforge_depths/{warden_grimtooth,kex_ironhide,dross_cinderhand,slagmaw_the_devourer,high_templar_ashgrave,ignareth_the_cinderlord}.xml` |
-| Boss AI | `data/creaturescripts/scripts/raid/{grimtooth,twins,slagmaw,ashgrave,ignareth}_ai.lua` |
-| Gate | `data/actions/scripts/raid/cinderforge_gate.lua` (actionid 10022, gate uid 10030) |
+| Boss AI | `data/scripts/creaturescripts/raid/{grimtooth,twins,slagmaw,ashgrave,ignareth}_ai.lua` |
+| Gate | `data/scripts/actions/raid/cinderforge_gate.lua` (actionid 10022, gate uid 10030) |
 | Storage | `QuestLog.storage.raid.*` = 45040-45045 |
 | Items | gear 20024-20028, emblem (quest item) 20029, signet reward 20030 |
 | Achievement | `AchievementLog.storage.cinderforgeConqueror` = 45113 |

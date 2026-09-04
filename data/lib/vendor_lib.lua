@@ -2,7 +2,7 @@
 	vendor_lib.lua
 
 	Shared logic for reputation-gated "quartermaster" vendor NPCs (see
-	data/npc/scripts/quartermaster_reyes.lua and armsmaster_cael.lua).
+	data/npc/quartermaster_reyes.lua and armsmaster_cael.lua).
 	Dialogue-driven rather than the native trade window, so standing can
 	gate individual items and stay consistent with the rest of this pack's
 	keyword-based NPCs.
@@ -10,8 +10,8 @@
 	Also gated on Renown (see renown_log.lua / docs/design/renown_and_pvp.md):
 	regardless of faction standing, a player whose Renown has dropped below
 	Neutral (from unprovoked open-world player kills) is refused service
-	entirely. Provisioner Nadia (data/npc/scripts/provisioner_nadia.lua)
-	enforces the same minimum independently, since she doesn't use this lib.
+	entirely. Provisioner Nadia (data/npc/provisioner_nadia.lua) enforces
+	the same minimum independently, since she doesn't use this lib.
 ]]
 
 VendorLib = {}
@@ -30,51 +30,51 @@ function VendorLib.buildShopCallback(npcHandler, factionKey, items)
 		return entry.name .. ' [' .. entry.rank .. ' - ' .. entry.price .. ' gold]' .. locked .. ", say '" .. entry.keyword .. "'"
 	end
 
-	return function(cid, type, msg)
-		if not npcHandler:isFocused(cid) then
+	return function(npc, creature, type, message)
+		if not npcHandler:checkInteraction(npc, creature) then
 			return false
 		end
 
-		local player = Player(cid)
+		local player = Player(creature)
 
 		if not player:hasRenownRank(VendorLib.minimumRenownRank) then
-			if msg:find('shop') or msg:find('trade') or msg:find('buy') then
-				npcHandler:say('I know what you\'ve done out there. I won\'t deal with you.', cid)
+			if MsgContains(message, 'shop') or MsgContains(message, 'trade') or MsgContains(message, 'buy') then
+				npcHandler:say('I know what you\'ve done out there. I won\'t deal with you.', npc, creature)
 				return true
 			end
 			for _, entry in ipairs(items) do
-				if msg:find(entry.keyword) then
-					npcHandler:say('I know what you\'ve done out there. I won\'t deal with you.', cid)
+				if MsgContains(message, entry.keyword) then
+					npcHandler:say('I know what you\'ve done out there. I won\'t deal with you.', npc, creature)
 					return true
 				end
 			end
 			return false
 		end
 
-		if msg:find('shop') or msg:find('trade') or msg:find('buy') then
+		if MsgContains(message, 'shop') or MsgContains(message, 'trade') or MsgContains(message, 'buy') then
 			local lines = {}
 			for _, entry in ipairs(items) do
 				table.insert(lines, catalogLine(player, entry))
 			end
 			npcHandler:say('Your standing with us: ' .. player:getReputationRank(factionKey).name ..
-				'. ' .. table.concat(lines, ' | '), cid)
+				'. ' .. table.concat(lines, ' | '), npc, creature)
 			return true
 		end
 
 		for _, entry in ipairs(items) do
-			if msg:find(entry.keyword) then
+			if MsgContains(message, entry.keyword) then
 				if not player:hasReputationRank(factionKey, entry.rank) then
-					npcHandler:say('You need ' .. entry.rank .. ' standing with us before I part with that.', cid)
+					npcHandler:say('You need ' .. entry.rank .. ' standing with us before I part with that.', npc, creature)
 					return true
 				end
 
 				if not player:removeMoney(entry.price) then
-					npcHandler:say('That\'s ' .. entry.price .. ' gold - come back when you have it.', cid)
+					npcHandler:say('That\'s ' .. entry.price .. ' gold - come back when you have it.', npc, creature)
 					return true
 				end
 
 				player:addItem(entry.itemId, 1)
-				npcHandler:say('Pleasure doing business.', cid)
+				npcHandler:say('Pleasure doing business.', npc, creature)
 				return true
 			end
 		end

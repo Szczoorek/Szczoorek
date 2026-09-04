@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-	FRAGMENT - merge these <item> entries into your existing items.xml.
+	FRAGMENT - merge these <item> entries into your server's real
+	items.xml (lives in the core data/items/ folder alongside
+	appearances.dat, not inside this content pack's own data/ tree).
 
-	IMPORTANT: an entry here only takes effect once the matching server id
-	(20001-20012) also exists in items.otb with a client id attached - see
-	the "Installing this pack" section of the repo README for how to add
-	that. The comment on each entry below suggests what kind of existing
-	item graphic to reuse for it.
+	IMPORTANT: on Canary, a new server id also needs a matching appearance
+	registered against appearances.dat before the client will render it -
+	items.xml alone (unlike old TFS items.otb) is not sufficient. See the
+	"Installing this pack" section of the repo README for how to do that.
+	The comment on each entry below suggests what kind of existing item
+	graphic to reuse for it.
 -->
 <items>
 	<!-- ===================== Quest 1: Wolves at the Doorstep ===================== -->
@@ -44,7 +47,7 @@
 	<!-- ===================== Dungeon 1: The Sunken Vault ===================== -->
 
 	<!-- reuse a book/ledger/parchment graphic. Enable the "Readable" flag for
-	     this id in items.otb so the text attribute below shows on use. -->
+	     this id in items.otb (or the equivalent flag in your Canary items.xml) so the text attribute below shows on use. -->
 	<item id="20005" article="a" name="sunken vault ledger">
 		<attribute key="weight" value="90"/>
 		<attribute key="description" value="Captain Blackscale's own ledger, water-stained but legible. Harbor Master Thessaly will want to see this."/>
@@ -97,7 +100,7 @@
 	</item>
 
 	<!-- reuse a book graphic. Enable the "Readable" flag for this id in
-	     items.otb so the text attribute below shows on use. -->
+	     items.otb (or the equivalent flag in your Canary items.xml) so the text attribute below shows on use. -->
 	<item id="20012" article="a" name="scarlet prayer book">
 		<attribute key="weight" value="70"/>
 		<attribute key="description" value="A prayer book bound in dyed leather. The prayers inside are... not the usual kind."/>
@@ -251,7 +254,7 @@
 	</item>
 
 	<!-- reuse a medallion/rune graphic. Enable the "Readable" flag for this
-	     id in items.otb if you'd like a text attribute added to it later. -->
+	     id in items.otb (or the equivalent flag in your Canary items.xml) if you'd like a text attribute added to it later. -->
 	<item id="20029" article="the" name="cinderforge emblem">
 		<attribute key="weight" value="25"/>
 		<attribute key="description" value="Ignareth's own emblem, still faintly warm. Forge Marshal Aldric will want to see this."/>
@@ -268,7 +271,7 @@
 
 	<!-- ===================== General Goods (Provisioner Nadia) ===================== -->
 	<!-- Ungated basic consumables, bought for gold - see docs/design/general_goods.md.
-	     Use scripts: data/actions/scripts/consumables/*.lua, registered by itemid. -->
+	     Use scripts: data/scripts/actions/consumables/*.lua, registered by itemid. -->
 
 	<!-- reuse a small potion flask graphic. Stackable, consumed on use. -->
 	<item id="20031" article="a" name="healing draught">

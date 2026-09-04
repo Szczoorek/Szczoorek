@@ -38,7 +38,7 @@ shipping from. **Harbor Master Thessaly**, at the docks, wants it cleared.
 - The two mini-bosses (Rustbeard, Grix) can be fought in either order or in
   parallel by a group that splits up - neither depends on the other.
 - **The gate**: a lever with actionid `10002`
-  (`data/actions/scripts/dungeons/sunken_vault_gate.lua`) guards the final
+  (`data/scripts/actions/dungeons/sunken_vault_gate.lua`) guards the final
   hall. It opens once *both* mini-bosses are dead, or immediately for
   anyone carrying a **Rusty Vault Key** (id 20007, a shortcut item - hand
   one out from a side objective or rare drop if you want a bypass route).
@@ -49,7 +49,7 @@ shipping from. **Harbor Master Thessaly**, at the docks, wants it cleared.
 ## Boss encounters
 
 ### 1. Rustbeard the Mad (mini-boss)
-`data/monster/sunken_vault/rustbeard_the_mad.xml` · AI: `rustbeard_ai.lua`
+`data/monster/sunken_vault/rustbeard_the_mad.lua` · AI: `rustbeard_ai.lua`
 
 - Standard melee tank-and-spank until **50% health**.
 - At 50% (once): enrages (+150 speed) and summons **2 Bilge Rats**.
@@ -57,7 +57,7 @@ shipping from. **Harbor Master Thessaly**, at the docks, wants it cleared.
 - Rare drop: Corsair's Trophy (flavor, 15%).
 
 ### 2. Foreman Grix (mini-boss)
-`data/monster/sunken_vault/foreman_grix.xml` · AI: `grix_ai.lua`
+`data/monster/sunken_vault/foreman_grix.lua` · AI: `grix_ai.lua`
 
 - Every 8 seconds casts **Overcharged Blast**: an AoE hit (45-75 dmg) in a
   3-tile radius around himself, telegraphed by "Take cover!". Groups should
@@ -65,7 +65,7 @@ shipping from. **Harbor Master Thessaly**, at the docks, wants it cleared.
 - On death: everyone nearby is credited (`QuestLog.storage.vault.grix`).
 
 ### 3. Captain Blackscale (final boss)
-`data/monster/sunken_vault/captain_blackscale.xml` · AI: `blackscale_ai.lua`
+`data/monster/sunken_vault/captain_blackscale.lua` · AI: `blackscale_ai.lua`
 
 Three-phase fight:
 1. **100-60%**: melee plus a **Tidal Wave** AoE (60-100 dmg, 4-tile radius)
@@ -84,11 +84,11 @@ plus a chance at the Corsair's Trophy.
 
 | Piece | Path |
 |---|---|
-| NPC | `data/npc/harbor_master_thessaly.xml` + `.../scripts/harbor_master_thessaly.lua` |
+| NPC | `data/npc/harbor_master_thessaly.lua` |
 | Trash monsters | `data/monster/sunken_vault/{vault_goblin,vault_corsair,bilge_rat}.xml` |
 | Bosses | `data/monster/sunken_vault/{rustbeard_the_mad,foreman_grix,captain_blackscale}.xml` |
-| Boss AI | `data/creaturescripts/scripts/dungeons/{rustbeard,grix,blackscale}_ai.lua` |
-| Gate | `data/actions/scripts/dungeons/sunken_vault_gate.lua` (actionid 10002, gate uid 10010) |
+| Boss AI | `data/scripts/creaturescripts/dungeons/{rustbeard,grix,blackscale}_ai.lua` |
+| Gate | `data/scripts/actions/dungeons/sunken_vault_gate.lua` (actionid 10002, gate uid 10010) |
 | Storage | `QuestLog.storage.vault.*` = 45020-45023 |
 | Items | ledger 20005, cutlass 20006, key 20007, trophy 20008 |
 

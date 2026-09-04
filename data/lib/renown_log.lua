@@ -8,7 +8,7 @@
 	and every repeatable (bounty/Proving Grounds) payout raises it a little.
 
 	Killing another player out in the open world - see
-	data/creaturescripts/scripts/pvp/renown_penalty.lua - lowers it. That's
+	data/scripts/creaturescripts/pvp/renown_penalty.lua - lowers it. That's
 	the whole point: unlike the faction reputations, Renown can go
 	negative, and going far enough negative has a real consequence (see
 	"Renown gates the vendors" below).

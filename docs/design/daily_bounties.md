@@ -9,7 +9,7 @@ content of its own (it rides entirely on the existing trash mobs).
 
 - **No accept step.** Kills toward a bounty always count while today's
   bounty for that dungeon isn't already turned in - see
-  `data/creaturescripts/scripts/bounties/{vault,cathedral}_trash_death.lua`,
+  `data/scripts/creaturescripts/bounties/{vault,cathedral}_trash_death.lua`,
   attached to every trash monster in each dungeon (not the named bosses,
   which have their own AI scripts and already reward reputation directly).
 - Talk to **Bounty Clerk Sarna** and say `bounty` for a status line on both
@@ -30,8 +30,8 @@ for groups already running the dungeon quest, not a bug.
 | Piece | Path |
 |---|---|
 | Lib | `data/lib/bounty_log.lua` |
-| NPC | `data/npc/bounty_clerk_sarna.xml` + `.../scripts/bounty_clerk_sarna.lua` |
-| Kill-credit scripts | `data/creaturescripts/scripts/bounties/{vault,cathedral}_trash_death.lua` |
+| NPC | `data/npc/bounty_clerk_sarna.lua` |
+| Kill-credit scripts | `data/scripts/creaturescripts/bounties/{vault,cathedral}_trash_death.lua` |
 | Storage | `BountyLog.storage.{vault,cathedral}.{progress,day,completed}` = 45120-45125 |
 
 ## Map checklist

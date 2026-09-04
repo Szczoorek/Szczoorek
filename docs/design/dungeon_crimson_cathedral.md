@@ -43,7 +43,7 @@ dungeon:
   Guards are the only trash that can drop the **Cathedral Sigil**
   (`QuestLog.items.cathedralSigil`, 8% - a deliberately rare "impatient
   group" shortcut).
-- **The inner gate** (`data/actions/scripts/dungeons/crimson_cathedral_gate.lua`,
+- **The inner gate** (`data/scripts/actions/dungeons/crimson_cathedral_gate.lua`,
   actionid `10021`, gate item uniqueid `10020`) opens if the player holds a
   Cathedral Sigil (consumed on use), **or** once all three outer bosses are
   dead - so a group with bad sigil luck can still always get through by
@@ -52,7 +52,7 @@ dungeon:
 ## Boss encounters
 
 ### 1. Brother Malachar — Library wing
-`data/monster/crimson_cathedral/brother_malachar.xml` · AI: `malachar_ai.lua`
+`data/monster/crimson_cathedral/brother_malachar.lua` · AI: `malachar_ai.lua`
 
 - Every 12 seconds, if fewer than 4 **Animated Tomes** are currently alive,
   summons 2 more ("Rise and defend the archive!"). Left unchecked the add
@@ -61,7 +61,7 @@ dungeon:
   Scarlet Prayer Book (flavor, 20%).
 
 ### 2. Sister Ophelia — Infirmary wing
-`data/monster/crimson_cathedral/sister_ophelia.xml` · AI: `ophelia_ai.lua`
+`data/monster/crimson_cathedral/sister_ophelia.lua` · AI: `ophelia_ai.lua`
 
 - Every 6 seconds: heals the most wounded nearby Crimson Zealot / Cathedral
   Guard / Flame Acolyte within 8 tiles for 250 HP if one is hurt and still
@@ -74,7 +74,7 @@ dungeon:
 - On death: credits `QuestLog.storage.cathedral.ophelia`.
 
 ### 3. Highlord Varek — Armory wing
-`data/monster/crimson_cathedral/highlord_varek.xml` · AI: `varek_ai.lua`
+`data/monster/crimson_cathedral/highlord_varek.lua` · AI: `varek_ai.lua`
 
 - Every 12 seconds: **Whirlwind**, a tight 2-tile-radius AoE (50-90 dmg)
   around himself - melee should consider stepping out briefly when he
@@ -84,7 +84,7 @@ dungeon:
 - On death: credits `QuestLog.storage.cathedral.varek`.
 
 ### 4. The Flameseer — Inner sanctum (final boss)
-`data/monster/crimson_cathedral/the_flameseer.xml` · AI: `flameseer_ai.lua`
+`data/monster/crimson_cathedral/the_flameseer.lua` · AI: `flameseer_ai.lua`
 
 - Every 10 seconds: **Fire Nova**, a wide 4-tile-radius AoE (70-110 dmg)
   around himself.
@@ -100,12 +100,12 @@ dungeon:
 
 | Piece | Path |
 |---|---|
-| NPC | `data/npc/inquisitor_dane.xml` + `.../scripts/inquisitor_dane.lua` |
+| NPC | `data/npc/inquisitor_dane.lua` |
 | Trash monsters | `data/monster/crimson_cathedral/{crimson_zealot,cathedral_guard,flame_acolyte}.xml` |
 | Add monsters | `data/monster/crimson_cathedral/{animated_tome,lesser_fire_elemental}.xml` |
 | Bosses | `data/monster/crimson_cathedral/{brother_malachar,sister_ophelia,highlord_varek,the_flameseer}.xml` |
-| Boss AI | `data/creaturescripts/scripts/dungeons/{malachar,ophelia,varek,flameseer}_ai.lua` |
-| Inner gate | `data/actions/scripts/dungeons/crimson_cathedral_gate.lua` (actionid 10021, gate uid 10020) |
+| Boss AI | `data/scripts/creaturescripts/dungeons/{malachar,ophelia,varek,flameseer}_ai.lua` |
+| Inner gate | `data/scripts/actions/dungeons/crimson_cathedral_gate.lua` (actionid 10021, gate uid 10020) |
 | Storage | `QuestLog.storage.cathedral.*` = 45030-45034 |
 | Items | ember 20009, sigil 20010, amulet 20011, prayer book 20012 |
 

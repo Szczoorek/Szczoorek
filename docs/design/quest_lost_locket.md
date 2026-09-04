@@ -29,9 +29,9 @@ passer-by to retrieve it.
 
 | Piece | Path |
 |---|---|
-| NPC definition | `data/npc/old_man_corwin.xml` |
-| NPC dialogue | `data/npc/scripts/old_man_corwin.lua` |
-| Chest action | `data/actions/scripts/quests/lost_locket_chest.lua` |
+| NPC definition | `data/npc/old_man_corwin.lua` |
+| NPC dialogue | `data/npc/old_man_corwin.lua` |
+| Chest action | `data/scripts/actions/quests/lost_locket_chest.lua` |
 | Storage | `QuestLog.storage.locket` = 45010 |
 | Items | `QuestLog.items.tarnishedLocket` = 20003, `QuestLog.items.corwinsLuckyRing` = 20004 |
 

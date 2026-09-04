@@ -30,9 +30,9 @@ their first death too.
 
 | Piece | Path |
 |---|---|
-| NPC | `data/npc/sergeant_coleman.xml` + `.../scripts/sergeant_coleman.lua` |
-| Monster | `data/monster/quest_bootcamp/training_dummy.xml` |
-| Death script | `data/creaturescripts/scripts/quests/training_dummy_death.lua` |
+| NPC | `data/npc/sergeant_coleman.lua` |
+| Monster | `data/monster/quest_bootcamp/training_dummy.lua` |
+| Death script | `data/scripts/creaturescripts/quests/training_dummy_death.lua` |
 | Storage | `QuestLog.storage.bootcamp.{quest,dummyDefeated}` = 45002-45003 |
 | Item | `QuestLog.items.recruitsTrainingBlade` = 20022 |
 

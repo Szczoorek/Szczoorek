@@ -45,7 +45,7 @@ simple quests grant it once, at their NPC hand-in.
 
 ## Losing Renown: open-world PvP
 
-`data/creaturescripts/scripts/pvp/renown_penalty.lua` docks **50 Renown**
+`data/scripts/creaturescripts/pvp/renown_penalty.lua` docks **50 Renown**
 from a player who kills another player, by default only when the kill was
 **unjustified** - i.e. it leans on Tibia's own built-in skull/frag system
 to tell an unprovoked gank apart from a legitimate PvP kill (retaliation,
@@ -62,48 +62,48 @@ that locks a character out of the game.
 
 ### ⚠️ Installing this piece specifically
 
-Every other script in this pack registers itself purely by dropping files
-in and merging XML fragments. This one is different: **a creaturescript
-event has to be attached to every player**, and that only happens through
-your server's *existing* login script (every real TFS server already has
-one - it's core functionality, not something this pack provides). Find
-wherever your server calls `player:registerEvent(...)` at login (typically
-`data/creaturescripts/scripts/login.lua`) and add:
+Every other script in this pack self-registers just by dropping the file
+in - no XML, no separate registration step. This one is different:
+**a `CreatureEvent` has to be attached to every player**, and unlike a
+monster (which attaches its own events via `mType:registerEvent(...)` at
+the bottom of its own file) there's no per-player file in this pack to do
+that from. It has to happen through your server's *existing* login script
+(every real Canary server already has one - it's core functionality, not
+something this pack provides). Find wherever it calls
+`player:registerEvent(...)` at login and add:
 
 ```lua
 player:registerEvent('RenownPvpPenalty')
 ```
 
 alongside whatever other events it already registers. Don't skip this -
-without it, `renown_penalty.lua` is registered in `creaturescripts.xml`
-but never actually fires.
+without it, `renown_penalty.lua` defines and registers the
+`RenownPvpPenalty` `CreatureEvent` itself, but it never actually attaches
+to any player and so never fires.
 
-### ⚠️ The onDeath signature is TFS-version-sensitive
+### The onDeath signature
 
-`renown_penalty.lua` is written against the classic TFS 1.x signature:
+`renown_penalty.lua` is written against Canary's `CreatureEvent` onDeath
+shape:
 
 ```lua
 onDeath(creature, corpse, killer, mostDamageKiller, unjustified, mostDamageUnjustified)
 ```
 
-Some forks/versions instead pass a `deathList` table of
-`{killer, unjustified}` entries for multi-assist credit. Check any other
-player-`onDeath` creaturescript your server already runs (a frag/skull
-script, a PvP-arena script, anything death-related) - if it uses a
-different signature than the one above, match `renown_penalty.lua`'s
-parameters to that same convention. The actual logic (find the killer,
-check whether it was unjustified, dock Renown) ports over unchanged; only
-the argument list needs to match your server's reality. The script itself
-carries this same warning at the top, since it's the one piece of this
-entire pack that's genuinely engine-version-sensitive rather than a
-drop-in.
+(Some Canary docs/examples call the fifth parameter `lastHitUnjustified`
+instead of `unjustified` - same value, just a naming difference between
+sources; the script uses `unjustified`.) If a future Canary version changes
+this shape - e.g. to a `deathList` table for multi-assist credit - the
+actual logic (find the killer, check whether it was unjustified, dock
+Renown) ports over unchanged; only the parameter list would need to
+change. The script itself carries this same note at the top.
 
 ## Renown gates the vendors
 
 This is what makes Renown matter beyond a number on a status screen: every
 vendor in the pack - Quartermaster Reyes, Armsmaster Cael
 (`data/lib/vendor_lib.lua`, shared by both) and Provisioner Nadia
-(`data/npc/scripts/provisioner_nadia.lua`, checked independently since she
+(`data/npc/provisioner_nadia.lua`, checked independently since she
 doesn't use that shared lib) - refuses to trade at all once a player's
 Renown drops below **Neutral** (0). This is on top of, not instead of,
 each vendor's own faction-rank gating - a player could be Exalted with the
@@ -143,10 +143,10 @@ Check your own Renown any time with `!renown`.
 | Piece | Path |
 |---|---|
 | Lib | `data/lib/renown_log.lua` |
-| PvP penalty hook | `data/creaturescripts/scripts/pvp/renown_penalty.lua` (registered as `RenownPvpPenalty` in `creaturescripts.xml` - **needs the login.lua line above to actually fire**) |
-| Vendor gate | `data/lib/vendor_lib.lua` (Reyes/Cael) + `data/npc/scripts/provisioner_nadia.lua` |
-| Player command | `data/talkactions/scripts/renown.lua` (`!renown`) |
-| GM reset | `data/talkactions/scripts/questreset.lua` - `renown` is its own key, separate from `all` (see the script's header comment for why) |
+| PvP penalty hook | `data/scripts/creaturescripts/pvp/renown_penalty.lua` (self-registers as `CreatureEvent('RenownPvpPenalty')` - **needs the login.lua line above to actually fire**) |
+| Vendor gate | `data/lib/vendor_lib.lua` (Reyes/Cael) + `data/npc/provisioner_nadia.lua` |
+| Player command | `data/scripts/talkactions/renown.lua` (`!renown`) |
+| GM reset | `data/scripts/talkactions/questreset.lua` - `renown` is its own key, separate from `all` (see the script's header comment for why) |
 | Storage | `RenownLog.storage.value` = 45102 (inside the 45100-45109 block `reputation_log.lua` already reserves) |
 
 ## Map checklist
